@@ -1,94 +1,64 @@
-# Tema 3: Método de Jacobi
+# 📌 Tema 3: Método de Jacobi
 
-## Introducción al Método de Jacobi
+## 🧠 ¿En qué consiste el Método de Jacobi?
 
-El método de Jacobi es otro método iterativo utilizado para resolver sistemas de ecuaciones lineales. A diferencia del método de Gauss-Seidel, el método de Jacobi calcula las nuevas aproximaciones de todas las variables utilizando únicamente los valores de la iteración anterior, sin actualizarlos en el mismo ciclo. Esta independencia lo convierte en un método sencillo de paralelizar, lo que es útil en aplicaciones de cómputo paralelo.
+El **método de Jacobi** es un método iterativo para resolver sistemas de ecuaciones lineales que parte de una estimación inicial y actualiza simultáneamente cada variable usando solo los valores de la iteración anterior.
 
-El algoritmo es simple y fácil de implementar, y puede aplicarse a sistemas con estructuras dispersas. Al igual que Gauss-Seidel, requiere que el sistema cumpla ciertas condiciones para garantizar la convergencia, como la dominancia diagonal. Sin embargo, suele converger más lentamente que Gauss-Seidel en la práctica.
+A diferencia de Gauss-Seidel, **no utiliza los valores nuevos en la misma iteración**, sino que actualiza todas las variables al final de cada paso. Esto lo hace ideal para paralelizar cálculos, aunque generalmente converge más lento.
 
-A pesar de ser menos eficiente que otros métodos iterativos en muchos casos, el método de Jacobi sigue siendo relevante como base para el estudio de técnicas numéricas iterativas, y también es útil en contextos donde el paralelismo o la independencia entre procesos es esencial para el rendimiento computacional.
+Para garantizar la convergencia, la matriz de coeficientes debe ser **diagonalmente dominante** o cumplir condiciones similares.
 
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Fácil de paralelizar debido a la independencia de las actualizaciones.
-- Simple de implementar y adecuado para sistemas dispersos.
-- Requiere poca memoria adicional al usar solo los valores anteriores.
-
-**Desventajas:**
-- Converge más lentamente que el método de Gauss-Seidel en la mayoría de los casos.
-- No garantiza convergencia a menos que la matriz sea diagonalmente dominante.
-- Puede requerir más iteraciones para alcanzar la tolerancia deseada.
+> ✅ Cuando se cumplen las condiciones, es fácil de implementar y paralelizar.
+> ⚠️ Sin embargo, su convergencia puede ser más lenta y no siempre está garantizada.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```java
+| 🟢 Ventajas                                      | 🔴 Desventajas                                |
+| ------------------------------------------------ | --------------------------------------------- |
+| Fácil de paralelizar y programar simultáneamente | Convergencia generalmente más lenta           |
+| Requiere solo valores de la iteración anterior   | No siempre converge sin condiciones adecuadas |
+| Ideal para matrices dispersas y grandes          | Puede necesitar muchas iteraciones            |
+
+---
+
+## ⚙️ Pseudocódigo del Método
+
+```plaintext
 Inicio
-  Definir n como entero
-  Definir A como matriz de reales [n][n]
-  Definir b como vector de reales [n]
-  Definir x como vector de reales [n]
-  Definir xNuevo como vector de reales [n]
-  Definir tolerancia como real
-  Definir maxIteraciones como entero
-  Definir iteracion como entero
-  Definir i, j como enteros
-  Definir error como real
+  Definir n, A[n][n], b[n], x[n], xNuevo[n]
+  Inicializar x con ceros
+  Definir tolerancia y máximo número de iteraciones
 
-  n = 3
-  A = [[3, 2, -1], [2, -2, 4], [-1, 0.5, -1]]
-  b = [1, -2, 0]
-  x = [0, 0, 0]
-  tolerancia = 0.001
-  maxIteraciones = 100
-  iteracion = 0
-
-  Mientras iteracion < maxIteraciones
-    Para i = 0 hasta n-1
-      Definir suma como real
+  Mientras no se alcance la tolerancia o máximo de iteraciones:
+    Para cada variable i:
       suma = 0
-      Para j = 0 hasta n-1
-        Si j != i
-          suma = suma + A[i][j] * x[j]
-        Fin Si
-      Fin Para
+      Para cada j ≠ i:
+        suma += A[i][j] * x[j]
       xNuevo[i] = (b[i] - suma) / A[i][i]
-    Fin Para
 
-    error = 0
-    Para i = 0 hasta n-1
-      error = max(error, abs(xNuevo[i] - x[i]))
-      x[i] = xNuevo[i]
-    Fin Para
+    Calcular error máximo entre xNuevo y x
+    Actualizar x con valores de xNuevo
 
-    Imprimir "Iteración ", iteracion, ":"
-    Para i = 0 hasta n-1
-      Imprimir "x", i, " = ", x[i]
-    Fin Para
-
-    Si error < tolerancia
-      Imprimir "Solución encontrada"
-      Retornar
-    Fin Si
-
-    iteracion = iteracion + 1
-  Fin Mientras
-
-  Imprimir "Máximo de iteraciones alcanzado"
+    Mostrar valores de x en la iteración actual
+    Si error < tolerancia, detener
 Fin
 ```
 
-### Código base en Java
+---
+
+## 💻 Código Java (estructura base)
 
 ```java
 public class CodigoBaseJacobi {
     public static void main(String[] args) {
         int n = 3;
-        double[][] A = {{3, 2, -1}, {2, -2, 4}, {-1, 0.5, -1}};
+        double[][] A = {
+            {3, 2, -1},
+            {2, -2, 4},
+            {-1, 0.5, -1}
+        };
         double[] b = {1, -2, 0};
         double[] x = {0, 0, 0};
         double[] xNuevo = new double[n];
@@ -130,13 +100,19 @@ public class CodigoBaseJacobi {
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo resuelto
 
 ```java
 public class Jacobi {
     public static void main(String[] args) {
         int n = 3;
-        double[][] A = {{3, 2, -1}, {2, -2, 4}, {-1, 0.5, -1}};
+        double[][] A = {
+            {3, 2, -1},
+            {2, -2, 4},
+            {-1, 0.5, -1}
+        };
         double[] b = {1, -2, 0};
         double[] x = {0, 0, 0};
         double[] xNuevo = new double[n];
@@ -175,9 +151,11 @@ public class Jacobi {
 }
 ```
 
-### Caso de prueba:
+---
 
-```java
+## 🧪 Resultado esperado (ejecución típica)
+
+```
 Iteración 0:
 x0 = 0.333
 x1 = -1.000
@@ -220,4 +198,7 @@ x2 = -0.423
 
 Solución encontrada
 ```
-### [<- Regresar a T3 - Métodos de Solución de Sistemas de Ecuaciones Lineales ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
+
+---
+
+### 🔙 [← Regresar al índice del Tema 3 - Métodos de Solución de Sistemas de Ecuaciones Lineales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
