@@ -1,70 +1,70 @@
-# Tema 2: Método de Punto Fijo
+# 🔁 Tema 2: Método de Punto Fijo
 
-## Introducción
-
-El método de punto fijo es una estrategia numérica que consiste en reformular una ecuación en una nueva expresión donde la incógnita aparece de forma explícita como función de sí misma. A partir de un valor inicial, se aplica la función repetidamente con la esperanza de que las aproximaciones sucesivas se estabilicen y lleguen a un valor constante. Si se logra este objetivo, se dice que se ha encontrado un punto fijo.
-
-Este método es sencillo y no requiere cálculos de derivadas, lo que lo hace accesible para una amplia variedad de funciones. Sin embargo, su éxito depende en gran medida de cómo se transforme la ecuación original. No cualquier reformulación asegura que el proceso converja, por lo que se debe tener precaución al plantear la función que se utilizará.
-
-La convergencia del método de punto fijo puede ser lenta y, en algunos casos, no garantiza llegar a una solución. Por ello, se recomienda usarlo cuando se tiene una buena comprensión de la función y cuando es posible verificar que las condiciones necesarias para la convergencia se cumplen. A pesar de sus limitaciones, sigue siendo una opción válida en ciertos escenarios.
+> 📌 **Categoría:** Métodos de Solución de Ecuaciones  
+> 🎯 **Nivel:** Básico – Intermedio  
+> 🛠️ **Aplicación:** Encontrar raíces de funciones sin necesidad de derivadas
 
 ---
 
-### Ventajas y Desventajas
+## 🧠 ¿Qué es el Método de Punto Fijo?
 
-**Ventajas:**
-- No requiere calcular derivadas, lo que lo hace más simple que métodos como Newton-Raphson.
-- Es intuitivo y fácil de implementar para funciones bien reformuladas.
-- Puede ser útil en problemas donde otras técnicas no son aplicables debido a la falta de derivadas.
+El **método de punto fijo** es una técnica numérica que transforma una ecuación \( f(x) = 0 \) en otra del tipo:
 
-**Desventajas:**
-- La convergencia no está garantizada y depende de la reformulación de la ecuación y del punto inicial.
-- Puede converger lentamente en comparación con otros métodos numéricos.
-- Requiere un análisis previo para asegurar que la función cumpla las condiciones de convergencia (como que la derivada de g(x) tenga magnitud menor a 1).
-
----
-
-### Pseudocódigo
-
-```text
-Inicio
-  Función f(x)
-    Retornar x^3 - x - 2
-  Fin Función
-
-  Función g(x)
-    Retornar (x + 2)^(1/3)
-  Fin Función
-
-  Definir x como real
-  Definir tolerancia como real
-  Definir maxIteraciones como entero
-  Definir iteracion como entero
-  Definir xNuevo como real
-
-  x = 1.5
-  tolerancia = 0.001
-  maxIteraciones = 100
-  iteracion = 0
-
-  Mientras iteracion < maxIteraciones
-    xNuevo = g(x)
-    Imprimir "Iteración ", iteracion, ": x = ", xNuevo, ", f(x) = ", f(xNuevo)
-
-    Si abs(xNuevo - x) < tolerancia
-      Imprimir "Raíz encontrada: ", xNuevo
-      Retornar
-    Fin Si
-
-    x = xNuevo
-    iteracion = iteracion + 1
-  Fin Mientras
-
-  Imprimir "Máximo de iteraciones alcanzado"
-Fin
 ```
 
-### Código base en Java
+x = g(x)
+
+```
+
+A partir de un valor inicial \( x_0 \), se aplica iterativamente la función \( g(x) \), generando una sucesión de valores que, bajo ciertas condiciones, converge a una solución.
+
+🔍 Esta sucesión se define como:
+
+```
+
+xₙ₊₁ = g(xₙ)
+
+````
+
+✅ **Ideal cuando** no se desea o no se puede derivar la función.  
+⚠️ **Convergencia no garantizada:** Depende de que \( |g'(x)| < 1 \) cerca de la raíz esperada.
+
+---
+
+## ⚖️ Ventajas y Desventajas
+
+| ✅ Ventajas                                                                 | ⚠️ Desventajas                                                                          |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| No necesita derivadas.                                                     | La convergencia depende mucho de la función \( g(x) \) elegida.                         |
+| Implementación simple e intuitiva.                                         | Puede converger lentamente.                                                             |
+| Útil cuando otras técnicas no aplican.                                     | Requiere verificación previa de condiciones de convergencia (como \( |g'(x)| < 1 \)).   |
+
+---
+
+## 🧮 Pseudocódigo
+
+```java
+Inicio
+  Función f(x) → Retornar x³ - x - 2
+  Función g(x) → Retornar (x + 2)^(1/3)
+
+  Inicializar: x = 1.5, tolerancia = 0.001, maxIter = 100
+  iteracion = 0
+
+  Mientras iteracion < maxIter:
+    xNuevo = g(x)
+    Mostrar iteración, xNuevo, f(xNuevo)
+
+    Si |xNuevo - x| < tolerancia → Retornar xNuevo como raíz
+
+    x = xNuevo
+    iteracion++
+Fin
+````
+
+---
+
+## 💻 Código base en Java
 
 ```java
 public class CodigoBasePuntoFijo {
@@ -94,12 +94,15 @@ public class CodigoBasePuntoFijo {
             x = xNuevo;
             iteracion++;
         }
+
         System.out.println("Máximo de iteraciones alcanzado");
     }
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class FixedPointMethod {
@@ -127,12 +130,15 @@ public class FixedPointMethod {
 
             x = xNuevo;
         }
+
         System.out.println("Máximo de iteraciones alcanzado");
     }
 }
 ```
 
-### Caso de prueba:
+---
+
+## 🔬 Caso de prueba
 
 ```text
 Iteración 0: x = 1.442, f(x) = 0.150
@@ -144,6 +150,11 @@ Iteración 5: x = 1.522, f(x) = 0.016
 Iteración 6: x = 1.514, f(x) = 0.006
 Iteración 7: x = 1.518, f(x) = 0.003
 Iteración 8: x = 1.520, f(x) = 0.001
-Raíz encontrada: 1.520
+✅ Raíz encontrada: 1.520
 ```
-### [<- Regresar a T2 - Métodos de Solución de Ecuaciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
+
+---
+
+## 🔗 Navegación
+
+[🔙 Regresar a T2 - Introducción a los Métodos de Solución de Ecuaciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
