@@ -1,4 +1,4 @@
-### [<- Regresar al Temario](https://github.com/Yayackie/Trabajos_Metodos-Numericos/tree/main)
+### [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
 # Tema 4: Diferenciación e Integración Numérica - Introducción General
 # Introducción
@@ -31,7 +31,7 @@ es esencial para quienes trabajan con datos, simulaciones o modelos
 matemáticos en diversas disciplinas.
 
 A continuación, conoce los diferentes métodos:
-- [Método de Simpson 1/3](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20de%20Simpson%20%E2%85%93.md)
-- [Método de Simpson 3/8](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20de%20Simpson%20%E2%85%9C.md)
-- [Método de la Cuadratura Gaussiana](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20de%20la%20Cuadratura%20Gaussiana.md)
-- [Método del Trapecio](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20del%20Trapecio.md)
+- [Método de Simpson 1/3](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20de%20Simpson%20%E2%85%93.md)
+- [Método de Simpson 3/8](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20de%20Simpson%20%E2%85%9C.md)
+- [Método de la Cuadratura Gaussiana](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20de%20la%20Cuadratura%20Gaussiana.md)
+- [Método del Trapecio](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/M%C3%A9todo%20del%20Trapecio.md)

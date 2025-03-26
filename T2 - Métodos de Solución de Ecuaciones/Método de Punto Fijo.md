@@ -146,4 +146,4 @@ Iteración 7: x = 1.518, f(x) = 0.003
 Iteración 8: x = 1.520, f(x) = 0.001
 Raíz encontrada: 1.520
 ```
-### [<- Regresar a T2 - Métodos de Solución de Ecuaciones ](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
+### [<- Regresar a T2 - Métodos de Solución de Ecuaciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)

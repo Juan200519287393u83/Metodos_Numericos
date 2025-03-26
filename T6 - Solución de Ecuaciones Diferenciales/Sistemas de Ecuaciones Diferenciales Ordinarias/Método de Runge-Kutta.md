@@ -211,5 +211,5 @@ x = 1.0, y_num = 0.368, y_exact = 0.368, error = 1.168e-04
 ```
 
 ---
-### [<- Regresar a T6 - Sistemas de Ecuaciones Diferenciales Ordinarias](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/Introducci%C3%B3n%20a%20los%20SIstemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias.md)
+### [<- Regresar a T6 - Sistemas de Ecuaciones Diferenciales Ordinarias](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/Introducci%C3%B3n%20a%20los%20SIstemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias.md)
 

@@ -144,4 +144,4 @@ public class SimpsonOneThird {
 ```text
 Integral aproximada: 1.718
 ```
-### [<- T4 - Diferenciación e Integración Numérica ](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/Introducci%C3%B3n%20a%20la%20DIferenciai%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica.md)
+### [<- T4 - Diferenciación e Integración Numérica ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/Introducci%C3%B3n%20a%20la%20DIferenciai%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica.md)

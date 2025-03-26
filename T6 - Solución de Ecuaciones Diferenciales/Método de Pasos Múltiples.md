@@ -201,4 +201,4 @@ x = 0.6, y = 0.862
 x = 0.8, y = 0.711
 x = 1.0, y = 0.574
 ```
-### [<- T6 - Solución de Ecuaciones Diferenciales ](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Introducci%C3%B3n%20a%20la%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales.md)
+### [<- T6 - Solución de Ecuaciones Diferenciales ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Introducci%C3%B3n%20a%20la%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales.md)

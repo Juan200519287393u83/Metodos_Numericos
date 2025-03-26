@@ -1,4 +1,4 @@
-### [<- Regresar al Temario](https://github.com/Yayackie/Trabajos_Metodos-Numericos/tree/main)
+### [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 # Tema 1: Introducción a los Métodos Numéricos
 
 ## ¿De qué trata? 
@@ -12,10 +12,10 @@ Los métodos numéricos permiten obtener soluciones aproximadas a problemas mate
 Comprender estos conceptos es crucial para evaluar la calidad de las soluciones numéricas y diseñar algoritmos robustos. A través de explicaciones teóricas, ejemplos prácticos y código en Java, este tema te ayudará a identificar, analizar y minimizar los errores en tus cálculos. 
 
 Dentro del tema, tenemos los sigueintes subtemas, cada uno con una introducción, su pseudocódigo y un ejemplo en Java:
-- [Error Numérico Total](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20Num%C3%A9rico%20Total.md)
-- [Error de Redondeo](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20de%20Redondeo.md) 
-- [Error por Cancelación Numérica](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20por%20Cancelaci%C3%B3n%20Num%C3%A9rica.md)
-- [Errores de Formulación](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20de%20Formulaci%C3%B3n.md)
-- [Errores por Equivocación](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20por%20Equivocaci%C3%B3n.md)
-- [Errores por Truncamiento](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20por%20Truncamiento.md)
-- [Incertidumbre en los Datos](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Incertidumbre%20en%20los%20Datos.md)
+- [Error Numérico Total](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20Num%C3%A9rico%20Total.md)
+- [Error de Redondeo](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20de%20Redondeo.md) 
+- [Error por Cancelación Numérica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20por%20Cancelaci%C3%B3n%20Num%C3%A9rica.md)
+- [Errores de Formulación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20de%20Formulaci%C3%B3n.md)
+- [Errores por Equivocación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20por%20Equivocaci%C3%B3n.md)
+- [Errores por Truncamiento](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20por%20Truncamiento.md)
+- [Incertidumbre en los Datos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Incertidumbre%20en%20los%20Datos.md)

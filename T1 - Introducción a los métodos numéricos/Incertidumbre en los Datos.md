@@ -79,4 +79,4 @@ Valor medido: 100.000
 Rango estimado: [97.500, 102.500]
 Incertidumbre en los datos: ±2.500
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
+### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)

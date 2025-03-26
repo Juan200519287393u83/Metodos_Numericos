@@ -83,4 +83,4 @@ Resultado calculado: 0.9999999999999999
 Resultado esperado: 1.0  
 Error de redondeo: 1.1102230246251565E-16
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
+### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)

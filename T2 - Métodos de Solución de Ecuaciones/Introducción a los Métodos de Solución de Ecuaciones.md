@@ -1,4 +1,4 @@
-### [<- Regresar al Temario](https://github.com/Yayackie/Trabajos_Metodos-Numericos/tree/main)
+### [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
 # Tema 2: Métodos de Solución de Ecuaciones
 ## Introducción
@@ -34,8 +34,8 @@ fundamento y comportamiento es indispensable para todo profesional que
 trabaje con modelos matemáticos.
 
 Algunos de los métodos son:
-- [Método de Bisección](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20Bisecci%C3%B3n.md)
-- [Método de Newton-Rhapson](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20Newton-Rhapson.md)
-- [Método de Punto Fijo](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20Punto%20Fijo.md)
-- [Método de la Regla Falsa](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20la%20Regla%20Falsa.md)
-- [Método de la Secante](https://github.com/Yayackie/Trabajos_Metodos-Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20la%20Secante.md)
+- [Método de Bisección](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20Bisecci%C3%B3n.md)
+- [Método de Newton-Rhapson](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20Newton-Rhapson.md)
+- [Método de Punto Fijo](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20Punto%20Fijo.md)
+- [Método de la Regla Falsa](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20la%20Regla%20Falsa.md)
+- [Método de la Secante](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/M%C3%A9todo%20de%20la%20Secante.md)
