@@ -1,78 +1,74 @@
-# Tema 3: Método de Eliminación Gaussiana
+# 🧮 Tema 3: Método de Eliminación Gaussiana
 
-## Introducción al Método de Eliminación Gaussiana
-
-El método de eliminación gaussiana es una técnica directa para resolver sistemas de ecuaciones lineales. Su objetivo principal es transformar el sistema original en una forma escalonada equivalente mediante operaciones elementales sobre las filas de la matriz aumentada. Estas operaciones incluyen el intercambio de filas, la multiplicación de una fila por un escalar distinto de cero y la suma o resta de filas. Una vez obtenida la forma escalonada, se puede aplicar el método de sustitución regresiva para hallar las soluciones del sistema.
-
-Este método es ampliamente utilizado debido a su claridad conceptual y su aplicabilidad general. Es capaz de resolver cualquier sistema de ecuaciones lineales que tenga solución única, aunque también puede detectar sistemas inconsistentes o con infinitas soluciones si se aplica correctamente. La eliminación gaussiana es especialmente útil en sistemas pequeños o medianos, o cuando se necesita una solución exacta sin depender de iteraciones.
-
-Sin embargo, su eficiencia disminuye considerablemente en sistemas muy grandes, ya que requiere una cantidad significativa de operaciones. Además, puede ser sensible a errores de redondeo en sistemas mal condicionados. Por esta razón, en entornos computacionales se suele acompañar de técnicas de pivoteo para mejorar la estabilidad numérica del método.
+> 📌 **Categoría:** Métodos de Solución de Sistemas de Ecuaciones Lineales  
+> 🛠️ **Tipo:** Método directo  
+> 🎯 **Propósito:** Resolver sistemas lineales mediante transformación matricial escalonada
 
 ---
 
-### Ventajas y Desventajas
+## 🧠 ¿Qué es la Eliminación Gaussiana?
 
-**Ventajas:**
-- Proporciona una solución exacta para sistemas de ecuaciones lineales con solución única.
-- Es conceptualmente claro y fácil de implementar en sistemas pequeños o medianos.
-- Puede identificar sistemas inconsistentes o con infinitas soluciones durante el proceso.
+La **eliminación gaussiana** es un método algebraico que resuelve sistemas de ecuaciones lineales transformando la **matriz aumentada** del sistema en una **forma escalonada**. Para ello, se aplican tres tipos de operaciones elementales entre filas:
 
-**Desventajas:**
-- La eficiencia disminuye en sistemas muy grandes debido al alto costo computacional.
-- Es sensible a errores de redondeo, especialmente en sistemas mal condicionados.
-- No incluye pivoteo por defecto, lo que puede requerir ajustes adicionales para mayor estabilidad.
+1. Intercambiar dos filas
+2. Multiplicar una fila por un escalar distinto de cero
+3. Sumar o restar un múltiplo de una fila a otra
+
+Una vez en forma escalonada, se aplica la **sustitución regresiva** para encontrar las soluciones.
+
+> ⚠️ Este método es especialmente útil en sistemas pequeños o medianos. Para sistemas grandes o mal condicionados, puede necesitar técnicas como el **pivoteo parcial o total** para evitar errores numéricos.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
+
+| ✅ Ventajas                                                                 | ⚠️ Desventajas                                                                         |
+|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| Proporciona una solución exacta (si existe).                                | Ineficiente para sistemas grandes: \( \mathcal{O}(n^3) \).                             |
+| Permite detectar sistemas sin solución o con infinitas soluciones.          | Sensible a errores de redondeo en sistemas mal condicionados.                         |
+| Fácil de implementar y comprender.                                          | Requiere mejoras (como pivoteo) para asegurar estabilidad numérica.                   |
+
+---
+
+## 🧾 Pseudocódigo
 
 ```text
 Inicio
-  Definir n como entero
-  Definir A como matriz de reales [n][n]
-  Definir b como vector de reales [n]
-  Definir x como vector de reales [n]
-  Definir i, j, k como enteros
-  Definir factor como real
-
-  n = 3
-  A = [[3, 2, -1], [2, -2, 4], [-1, 0.5, -1]]
-  b = [1, -2, 0]
+  Definir A[n][n] y b[n]
+  Inicializar matriz aumentada y vector de términos independientes
 
   // Eliminación hacia adelante
   Para k = 0 hasta n-2
     Si A[k][k] = 0
-      Imprimir "Pivote nulo, no se puede resolver"
-      Retornar
+      Mostrar "Pivote nulo"
+      Terminar
     Fin Si
     Para i = k+1 hasta n-1
       factor = A[i][k] / A[k][k]
       Para j = k hasta n-1
-        A[i][j] = A[i][j] - factor * A[k][j]
+        A[i][j] -= factor * A[k][j]
       Fin Para
-      b[i] = b[i] - factor * b[k]
+      b[i] -= factor * b[k]
     Fin Para
   Fin Para
 
-  // Sustitución hacia atrás
+  // Sustitución regresiva
   x[n-1] = b[n-1] / A[n-1][n-1]
   Para i = n-2 hasta 0 con paso -1
-    Definir suma como real
     suma = 0
     Para j = i+1 hasta n-1
-      suma = suma + A[i][j] * x[j]
+      suma += A[i][j] * x[j]
     Fin Para
     x[i] = (b[i] - suma) / A[i][i]
   Fin Para
 
-  Imprimir "Solución:"
-  Para i = 0 hasta n-1
-    Imprimir "x", i, " = ", x[i]
-  Fin Para
+  Mostrar solución x
 Fin
-```
+````
 
-### Código base en Java
+---
+
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseEliminacionGaussiana {
@@ -97,7 +93,7 @@ public class CodigoBaseEliminacionGaussiana {
             }
         }
 
-        // Sustitución hacia atrás
+        // Sustitución regresiva
         x[n - 1] = b[n - 1] / A[n - 1][n - 1];
         for (int i = n - 2; i >= 0; i--) {
             double suma = 0;
@@ -107,7 +103,7 @@ public class CodigoBaseEliminacionGaussiana {
             x[i] = (b[i] - suma) / A[i][i];
         }
 
-        // Imprimir solución
+        // Mostrar solución
         System.out.println("Solución:");
         for (int i = 0; i < n; i++) {
             System.out.println("x" + i + " = " + x[i]);
@@ -116,7 +112,9 @@ public class CodigoBaseEliminacionGaussiana {
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class GaussianElimination {
@@ -160,7 +158,9 @@ public class GaussianElimination {
 }
 ```
 
-### Caso de prueba:
+---
+
+## 🔬 Caso de prueba
 
 ```text
 Solución:
@@ -168,4 +168,9 @@ x0 = 0.429
 x1 = 0.143
 x2 = -0.429
 ```
-### [<- Regresar a T3 - Métodos de Solución de Sistemas de Ecuaciones Lineales ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
+
+---
+
+## 🔗 Navegación
+
+[🔙 Regresar a T3 - Introducción a los Métodos de Solución de Sistemas de Ecuaciones Lineales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
