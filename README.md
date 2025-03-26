@@ -22,7 +22,7 @@ Cada tema está organizado con teoría clara, pseudocódigo, ejemplos en Java y 
 
 ### 🧾 Tabla de Contenidos
 
-| Nº | Tema | Enlace |
+| Nº | Tema | Enlace |z
 |----|------|--------|
 | T1 | Introducción a los Métodos Numéricos | [📘 Ver tema](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Introducción%20a%20los%20métodos%20numéricos.md) |
 | T2 | Solución de Ecuaciones No Lineales | [📘 Ver tema](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20Métodos%20de%20Solución%20de%20Ecuaciones/Introducción%20a%20los%20Métodos%20de%20Solución%20de%20Ecuaciones.md) |
@@ -37,7 +37,6 @@ Cada tema está organizado con teoría clara, pseudocódigo, ejemplos en Java y 
 
 - **Lenguaje de programación**: Java ☕
 - **Formato de documentación**: Markdown `.md`
-- **Entorno de desarrollo sugerido**: VS Code, IntelliJ IDEA
 
 ---
 
