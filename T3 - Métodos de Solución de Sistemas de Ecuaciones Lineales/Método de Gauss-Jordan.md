@@ -1,82 +1,50 @@
-# Tema 3: Método de Gauss-Jordan
+# 📌 Tema 3: Método de Gauss-Jordan
 
-## Introducción al Método de Gauss-Jordan
+## 🧠 ¿Qué es el Método de Gauss-Jordan?
 
-El método de Gauss-Jordan es una extensión del método de eliminación gaussiana, que va un paso más allá al transformar la matriz aumentada del sistema no solo a una forma escalonada, sino a una forma reducida por filas (también conocida como forma canónica). Esto significa que no solo se busca ceros debajo de la diagonal principal, sino también encima de ella, dejando una matriz diagonal o una matriz identidad en el caso de sistemas con solución única.
+El **método de Gauss-Jordan** es una mejora del método de eliminación de Gauss. A diferencia de este último, no solo busca convertir la matriz aumentada del sistema en una forma escalonada, sino que la lleva a su **forma reducida por filas**, donde los elementos fuera de la diagonal principal también son eliminados. El objetivo final es convertir la matriz de coeficientes en una **matriz identidad**, lo cual permite obtener las soluciones directamente.
 
-Este método permite obtener directamente la solución del sistema sin necesidad de aplicar la sustitución regresiva, lo cual lo hace más directo. Además, resulta particularmente útil cuando se desea invertir una matriz o resolver múltiples sistemas con la misma matriz de coeficientes, ya que su algoritmo transforma la matriz completa.
+Este enfoque evita el paso de sustitución regresiva y permite:
 
-A pesar de su precisión y generalidad, el método de Gauss-Jordan tiene un costo computacional mayor que el de la eliminación gaussiana. Su complejidad lo vuelve poco práctico para sistemas de gran tamaño, donde los métodos iterativos o variantes optimizadas resultan más eficientes. No obstante, es una excelente herramienta didáctica y útil para comprender en profundidad la naturaleza algebraica de los sistemas lineales.
+* Resolver sistemas de ecuaciones de manera más directa.
+* Invertir matrices fácilmente.
+* Detectar si un sistema no tiene solución o tiene infinitas soluciones con claridad.
 
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Proporciona la solución directamente sin necesidad de sustitución regresiva.
-- Es útil para invertir matrices o resolver múltiples sistemas con la misma matriz de coeficientes.
-- Su forma reducida por filas facilita la interpretación de sistemas inconsistentes o con infinitas soluciones.
-
-**Desventajas:**
-- Tiene un costo computacional mayor que la eliminación gaussiana, especialmente en sistemas grandes.
-- Puede ser sensible a errores de redondeo en sistemas mal condicionados.
-- No incluye pivoteo por defecto, lo que puede requerir ajustes para mejorar la estabilidad numérica.
+> 🧠 Aunque es muy útil para entender la teoría de los sistemas lineales, su alto coste computacional lo hace poco adecuado para problemas de gran tamaño.
 
 ---
 
-### Pseudocódigo
+## 🟢 Pros y 🔴 Contras
 
-```text
+| 🟢 Ventajas                                                                             | 🔴 Desventajas                                                         |
+| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Calcula la solución sin pasos adicionales como la sustitución regresiva.                | Requiere más operaciones que la eliminación gaussiana.                 |
+| Ideal para invertir matrices o reutilizar una misma matriz de coeficientes.             | Puede presentar errores numéricos en sistemas mal condicionados.       |
+| Permite detectar fácilmente si el sistema es incompatible o tiene soluciones infinitas. | Generalmente no incluye pivoteo, lo cual puede afectar su estabilidad. |
+
+---
+
+## ⚙️ Pseudocódigo
+
+```plaintext
 Inicio
-  Definir n como entero
-  Definir A como matriz de reales [n][n]
-  Definir b como vector de reales [n]
-  Definir x como vector de reales [n]
-  Definir i, j, k como enteros
-  Definir factor como real
+  Definir n, A[n][n], b[n], x[n]
+  Inicializar matriz A y vector b con los valores del sistema
 
-  n = 3
-  A = [[3, 2, -1], [2, -2, 4], [-1, 0.5, -1]]
-  b = [1, -2, 0]
+  Para cada fila k de 0 a n-1:
+    Si el pivote A[k][k] es cero:
+      Mostrar error y terminar
+    Normalizar la fila k dividiendo por el pivote
+    Aplicar eliminación a todas las demás filas para anular la columna k
 
-  // Eliminación hacia adelante y hacia atrás
-  Para k = 0 hasta n-1
-    Si A[k][k] = 0
-      Imprimir "Pivote nulo, no se puede resolver"
-      Retornar
-    Fin Si
-    // Normalizar fila k
-    factor = A[k][k]
-    Para j = 0 hasta n-1
-      A[k][j] = A[k][j] / factor
-    Fin Para
-    b[k] = b[k] / factor
-
-    // Eliminar columna k en otras filas
-    Para i = 0 hasta n-1
-      Si i != k
-        factor = A[i][k]
-        Para j = 0 hasta n-1
-          A[i][j] = A[i][j] - factor * A[k][j]
-        Fin Para
-        b[i] = b[i] - factor * b[k]
-      Fin Si
-    Fin Para
-  Fin Para
-
-  // Solución
-  Para i = 0 hasta n-1
-    x[i] = b[i]
-  Fin Para
-
-  Imprimir "Solución:"
-  Para i = 0 hasta n-1
-    Imprimir "x", i, " = ", x[i]
-  Fin Para
+  Al finalizar, el vector b contiene las soluciones
+  Mostrar el resultado
 Fin
 ```
 
-### Código base en Java
+---
+
+## 💡 Código Java - Base
 
 ```java
 public class CodigoBaseGaussJordan {
@@ -86,20 +54,18 @@ public class CodigoBaseGaussJordan {
         double[] b = {1, -2, 0};
         double[] x = new double[n];
 
-        // Eliminación hacia adelante y hacia atrás
         for (int k = 0; k < n; k++) {
             if (A[k][k] == 0) {
                 System.out.println("Pivote nulo, no se puede resolver");
                 return;
             }
-            // Normalizar fila k
+
             double factor = A[k][k];
             for (int j = 0; j < n; j++) {
                 A[k][j] /= factor;
             }
             b[k] /= factor;
 
-            // Eliminar columna k en otras filas
             for (int i = 0; i < n; i++) {
                 if (i != k) {
                     factor = A[i][k];
@@ -111,21 +77,21 @@ public class CodigoBaseGaussJordan {
             }
         }
 
-        // Solución
         for (int i = 0; i < n; i++) {
             x[i] = b[i];
         }
 
-        // Imprimir solución
         System.out.println("Solución:");
         for (int i = 0; i < n; i++) {
-            System.out.println("x" + i + " = " + x[i]);
+            System.out.printf("x%d = %.3f%n", i, x[i]);
         }
     }
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## 🧪 Ejemplo resuelto
 
 ```java
 public class GaussJordan {
@@ -135,20 +101,18 @@ public class GaussJordan {
         double[] b = {1, -2, 0};
         double[] x = new double[n];
 
-        // Eliminación hacia adelante y hacia atrás
         for (int k = 0; k < n; k++) {
             if (A[k][k] == 0) {
                 System.out.println("Pivote nulo, no se puede resolver");
                 return;
             }
-            // Normalizar fila k
+
             double factor = A[k][k];
             for (int j = 0; j < n; j++) {
                 A[k][j] /= factor;
             }
             b[k] /= factor;
 
-            // Eliminar columna k en otras filas
             for (int i = 0; i < n; i++) {
                 if (i != k) {
                     factor = A[i][k];
@@ -160,12 +124,10 @@ public class GaussJordan {
             }
         }
 
-        // Solución
         for (int i = 0; i < n; i++) {
             x[i] = b[i];
         }
 
-        // Imprimir solución
         System.out.println("Solución:");
         for (int i = 0; i < n; i++) {
             System.out.printf("x%d = %.3f%n", i, x[i]);
@@ -174,12 +136,19 @@ public class GaussJordan {
 }
 ```
 
-### Caso de prueba:
+---
 
-```text
-Solución:
+## 🔎 Resultado esperado
+
+```
+Entrada:
+A = [[3, 2, -1], [2, -2, 4], [-1, 0.5, -1]]
+b = [1, -2, 0]
+
+Salida:
 x0 = 0.429
 x1 = 0.143
 x2 = -0.429
 ```
-### [<- Regresar a T3 - Métodos de Solución de Sistemas de Ecuaciones Lineales ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
+
+### 🔙 [← Volver al índice del Tema 3 - Métodos para resolver sistemas de ecuaciones lineales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
