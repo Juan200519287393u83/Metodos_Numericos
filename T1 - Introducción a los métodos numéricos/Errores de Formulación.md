@@ -1,30 +1,30 @@
-## Tema 1: Errores de Formulación
+### 🔙 [← Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
 
-# ¿Qué es?
-
-Los errores de formulación se producen cuando el modelo matemático utilizado para describir un problema real es incorrecto o incompleto. Para facilitar el análisis y resolver problemas complejos, muchas veces se hacen simplificaciones o suposiciones que alejan el modelo de la realidad. Esto introduce un error que no proviene del método numérico, sino de una mala representación del fenómeno original.
-
-Estos errores son especialmente peligrosos porque pueden pasar desapercibidos si el modelo parece funcionar correctamente bajo ciertas condiciones. Una formulación incorrecta puede invalidar completamente los resultados, sin importar qué tan preciso sea el método empleado.
+# ⚠️ Tema 1: Errores de Formulación
 
 ---
 
-### Ventajas y Desventajas 
+### ❓ ¿Qué es?
 
-**Ventajas:**
-- Permite resolver problemas complejos mediante simplificaciones que hacen los cálculos manejables.
-- Reduce el tiempo y los recursos computacionales necesarios para modelar fenómenos.
-- Facilita la comprensión y comunicación de conceptos al abstraer detalles secundarios.
+Los **errores de formulación** ocurren cuando el modelo matemático que representa un problema real es incorrecto o incompleto. Para simplificar problemas complejos, a menudo se hacen suposiciones o simplificaciones que alejan el modelo de la realidad, introduciendo errores que no dependen del método numérico sino de la representación inadecuada del fenómeno.
 
-**Desventajas:**
-- Las simplificaciones pueden introducir errores significativos que afectan la validez de los resultados.
-- Puede ser difícil detectar si el modelo es inadecuado sin pruebas extensivas contra datos reales.
-- Los resultados pueden ser engañosos si las suposiciones del modelo no se verifican adecuadamente.
+Estos errores pueden ser peligrosos porque, aunque el modelo funcione bajo ciertas condiciones, una formulación errónea puede invalidar completamente los resultados.
 
 ---
 
-### Pseudocódigo
+### ✅ Ventajas y ❌ Desventajas
 
-```java
+| ✅ **Ventajas**                                                 | ❌ **Desventajas**                                       |
+| -------------------------------------------------------------- | ------------------------------------------------------- |
+| Permite resolver problemas complejos mediante simplificaciones | Simplificaciones pueden causar errores significativos   |
+| Reduce tiempo y recursos computacionales                       | Difícil detectar modelos inadecuados sin pruebas reales |
+| Facilita la comprensión y comunicación del problema            | Resultados pueden ser engañosos si suposiciones fallan  |
+
+---
+
+### 📝 Pseudocódigo
+
+```text
 Inicio
   Definir g como real
   Definir t como real
@@ -36,7 +36,10 @@ Inicio
   Imprimir "Nota: Se desprecia la resistencia del aire (modelo simplificado)"
 Fin
 ```
-### Código base en Java
+
+---
+
+### 💻 Código Base en Java
 
 ```java
 public class CodigoBaseFormulacion {
@@ -50,7 +53,10 @@ public class CodigoBaseFormulacion {
     }
 }
 ```
-### Ejemplo funcional en Java
+
+---
+
+### 🛠 Ejemplo Funcional en Java
 
 ```java
 public class ErrorFormulacion {
@@ -68,12 +74,13 @@ public class ErrorFormulacion {
 }
 ```
 
-# Caso de prueba:
+---
 
-```java
+### 📋 Caso de prueba
+
+```text
 Distancia calculada (modelo ideal): 44.145 metros
 Distancia esperada: 44.145 metros
 Error por formulación: 0.0
 Nota: No se considera resistencia del aire.
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
