@@ -1,4 +1,4 @@
-````markdown
+
 # 🧮 Tema 2: Método de Bisección
 
 > 📌 **Categoría:** Métodos de Solución de Ecuaciones  
