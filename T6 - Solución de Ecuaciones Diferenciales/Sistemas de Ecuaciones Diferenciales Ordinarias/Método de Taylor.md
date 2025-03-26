@@ -1,8 +1,8 @@
----
+ <div align="center">
 
-<p align="center">
-  <h1>🎯 Tema 6: Método de Taylor</h1>
-</p>
+# 🎯 Tema 6: Método de Taylor
+
+</div>
 
 ---
 
