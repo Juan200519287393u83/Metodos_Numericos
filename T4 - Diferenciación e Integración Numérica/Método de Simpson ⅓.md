@@ -1,73 +1,55 @@
-# Tema 4: Método de Simpson 1/3
+# 📌 Tema 4: Método de Simpson 1/3
 
-## Introducción
+## 🧠 ¿En qué consiste el Método de Simpson 1/3?
 
-El método de Simpson 1/3 es una técnica de integración numérica que permite aproximar el valor de una integral definida a partir de una combinación de valores de la función evaluados en puntos igualmente espaciados. Este método es particularmente útil cuando se tiene una función continua y suave dentro del intervalo de integración, y se basa en aproximar el área bajo la curva mediante parábolas.
+El **método de Simpson 1/3** es una técnica de integración numérica que aproxima el valor de una integral definida usando una combinación ponderada de valores de la función evaluados en puntos igualmente espaciados.
 
-El fundamento del método radica en utilizar polinomios de segundo grado para estimar la función dentro de subintervalos. Para aplicar esta técnica, el intervalo de integración se divide en un número par de segmentos (es decir, un número impar de puntos), y se utiliza una fórmula específica que pondera los extremos y los puntos medios del intervalo. Esta fórmula proporciona una mayor precisión que la del método del trapecio, especialmente si la función se comporta de manera suave.
+Este método se basa en aproximar el área bajo la curva mediante parábolas (polinomios de segundo grado) en subintervalos del intervalo de integración. Para ello, se divide el intervalo en un número par de subintervalos y se aplica una fórmula específica que da más peso a los puntos medios.
 
-Gracias a su simplicidad y precisión, el método de Simpson 1/3 es ampliamente usado en aplicaciones de ingeniería, física y ciencias aplicadas. No obstante, su correcta implementación requiere que se cumplan ciertas condiciones, como el número par de subintervalos, y puede perder precisión si la función presenta muchos cambios bruscos o discontinuidades dentro del intervalo.
+Gracias a su simplicidad y precisión, es ampliamente usado en ingeniería, física y ciencias aplicadas, especialmente cuando la función es continua y suave.
 
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Ofrece mayor precisión que el método del trapecio al usar parábolas para la aproximación.
-- Es relativamente simple de implementar y eficiente para funciones suaves.
-- Proporciona buenos resultados con un número moderado de subintervalos.
-
-**Desventajas:**
-- Requiere un número par de subintervalos para su aplicación.
-- Pierde precisión si la función tiene discontinuidades o cambios bruscos.
-- No es adecuado para funciones con alta oscilación o singularidades dentro del intervalo.
+> ✅ Ofrece mayor precisión que el método del trapecio para funciones suaves.
+> ⚠️ Requiere un número par de subintervalos y pierde precisión ante funciones con discontinuidades o oscilaciones bruscas.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```text
+| 🟢 Ventajas                                                   | 🔴 Desventajas                                            |
+| ------------------------------------------------------------- | --------------------------------------------------------- |
+| Mayor precisión que el método del trapecio                    | Necesita número par de subintervalos                      |
+| Simple y eficiente para funciones suaves                      | No recomendado para funciones con muchas discontinuidades |
+| Resultados confiables con un número moderado de subintervalos | Pierde precisión con funciones altamente oscilatorias     |
+
+---
+
+## ⚙️ Pseudocódigo del Método
+
+```plaintext
 Inicio
-  Función f(x)
-    Retornar exp(x)
-  Fin Función
+  Definir función f(x) = exp(x)
 
-  Definir a como real
-  Definir b como real
-  Definir n como entero
-  Definir h como real
-  Definir suma como real
-  Definir x como real
-  Definir i como entero
-  Definir integral como real
+  Definir a, b como reales
+  Definir n como entero (n debe ser par)
+  Definir h = (b - a) / n
+  Definir suma = f(a) + f(b)
 
-  a = 0.0
-  b = 1.0
-  n = 4
-
-  Si n mod 2 != 0
-    Imprimir "El número de subintervalos debe ser par"
-    Retornar
-  Fin Si
-
-  h = (b - a) / n
-  suma = f(a) + f(b)
-
-  Para i = 1 hasta n-1
+  Para i desde 1 hasta n - 1:
     x = a + i * h
-    Si i mod 2 = 0
+    Si i es par:
       suma = suma + 2 * f(x)
-    Sino
+    Sino:
       suma = suma + 4 * f(x)
-    Fin Si
   Fin Para
 
   integral = (h / 3) * suma
-  Imprimir "Integral aproximada: ", integral
+  Imprimir integral aproximada
 Fin
 ```
 
-### Código base en Java
+---
+
+## 💻 Código Java (estructura base)
 
 ```java
 public class CodigoBaseSimpsonOneThird {
@@ -103,7 +85,9 @@ public class CodigoBaseSimpsonOneThird {
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class SimpsonOneThird {
@@ -139,9 +123,14 @@ public class SimpsonOneThird {
 }
 ```
 
-### Caso de prueba:
+---
 
-```text
+## 🧪 Resultado esperado
+
+```
 Integral aproximada: 1.718
 ```
-### [<- T4 - Diferenciación e Integración Numérica ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/Introducci%C3%B3n%20a%20la%20DIferenciai%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica.md)
+
+---
+
+### 🔙 [Regresar al índice del Tema 4 - Diferenciación e Integración Numérica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/Introducci%C3%B3n%20a%20la%20DIferenciai%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica.md)
