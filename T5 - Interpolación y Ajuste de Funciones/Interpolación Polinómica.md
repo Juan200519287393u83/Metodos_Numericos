@@ -1,45 +1,35 @@
-# Tema 5: Interpolación Polinómica
+# 📌 Tema 5: Interpolación Polinómica
 
-## Introducción
+## 🧠 Introducción
 
-La interpolación polinómica busca construir un polinomio de grado n + 1 puntos conocidos. A diferencia de la interpolación lineal, este método puede capturar mejor la curvatura y complejidad de una función subyacente, ya que emplea expresiones matemáticas más ricas en términos de comportamiento.
+La **interpolación polinómica** busca construir un polinomio que pase exactamente por $n + 1$ puntos conocidos. A diferencia de la interpolación lineal, este método puede capturar mejor la curvatura y complejidad de una función subyacente, ya que utiliza expresiones matemáticas más completas.
 
-Entre los métodos más utilizados dentro de la interpolación polinómica se encuentran la interpolación de Newton y la de Lagrange. Ambos permiten construir el polinomio que representa los datos, pero utilizan distintas formulaciones para hacerlo. Estos métodos se consideran exactos para los puntos conocidos, pero pueden presentar problemas de oscilación (conocido como fenómeno de Runge) cuando se utilizan polinomios de alto grado en intervalos amplios.
+Entre los métodos más usados están la interpolación de **Newton** y la de **Lagrange**, que permiten construir el polinomio pero con formulaciones distintas. Aunque son exactos en los puntos conocidos, pueden presentar oscilaciones (fenómeno de Runge) con polinomios de grado alto y en intervalos grandes.
 
-La interpolación polinómica es especialmente valiosa cuando se tiene un número moderado de datos distribuidos uniformemente y se busca una función que se adapte con exactitud. Sin embargo, en aplicaciones con muchos datos, suelen preferirse métodos alternativos como los splines o el ajuste de funciones, para evitar inestabilidad numérica.
-
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Captura mejor la curvatura de funciones complejas en comparación con la interpolación lineal.
-- Proporciona resultados exactos en los puntos conocidos.
-- Útil para modelar datos con un número moderado de puntos.
-
-**Desventajas:**
-- Puede generar oscilaciones significativas (fenómeno de Runge) con polinomios de alto grado.
-- Computacionalmente más costoso que la interpolación lineal.
-- Menos robusto para datos con ruido o distribuciones no uniformes.
+La interpolación polinómica es ideal cuando hay un número moderado de datos bien distribuidos y se busca un ajuste exacto. Para conjuntos grandes o datos ruidosos, métodos como splines o ajuste de curvas suelen ser preferidos.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```text
+| 🟢 Ventajas                                                     | 🔴 Desventajas                                                 |
+| --------------------------------------------------------------- | -------------------------------------------------------------- |
+| Captura la curvatura de funciones complejas mejor que la lineal | Puede generar oscilaciones (fenómeno de Runge) en grados altos |
+| Resultados exactos en los puntos conocidos                      | Más costoso computacionalmente que la interpolación lineal     |
+| Útil para datos moderados y bien distribuidos                   | Menos robusto para datos ruidosos o distribuciones irregulares |
+
+---
+
+## ⚙️ Pseudocódigo (Interpolación de Lagrange)
+
+```plaintext
 Inicio
   Definir x como vector de reales [n]
   Definir y como vector de reales [n]
   Definir xp como real
-  Definir yp como real
+  Definir yp como real = 0
   Definir L como real
   Definir i, j como enteros
-
-  x = [0, 1, 2, 3]
-  y = [1, 2.718, 7.389, 20.085]
-  xp = 1.5
-  n = 4
-  yp = 0
 
   Para i = 0 hasta n-1
     L = 1
@@ -57,7 +47,7 @@ Fin
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
 public class CodigoBasePolynomialInterpolation {
@@ -85,7 +75,7 @@ public class CodigoBasePolynomialInterpolation {
 
 ---
 
-### Ejemplo funcional en Java
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class PolynomialInterpolation {
@@ -95,7 +85,7 @@ public class PolynomialInterpolation {
         }
         for (int i = 1; i < x.length; i++) {
             if (x[i] <= x[i - 1]) {
-                throw new IllegalArgumentException("El vector x debe estar ordenado en orden ascendente");
+                throw new IllegalArgumentException("El vector x debe estar ordenado ascendentemente");
             }
         }
         for (int i = 0; i < x.length; i++) {
@@ -141,9 +131,9 @@ public class PolynomialInterpolation {
 
 ---
 
-### Caso de prueba:
+## 🧪 Resultado esperado
 
-```text
+```
 Interpolación polinómica (Lagrange):
 Punto interpolado: x = 1.5, y = 4.482
 Puntos usados:
@@ -152,4 +142,7 @@ Puntos usados:
 (2.0, 7.389)
 (3.0, 20.085)
 ```
-### [<- T5 - Interpolación y Ajuste de Funciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
+
+---
+
+### 🔙 [← Volver al índice del Tema 5 - Interpolación y Ajuste de Funciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
