@@ -1,33 +1,28 @@
+# 📌 Tema 5: Interpolación Lineal
 
-# Tema 5: Interpolación Lineal
+## 🧠 Introducción
 
-## Introducción
+La **interpolación lineal** es una técnica sencilla y directa para estimar valores intermedios entre dos puntos conocidos, uniendo estos con una línea recta y calculando valores sobre esa línea. Asume que la función cambia de forma lineal entre los puntos, lo que facilita cálculos rápidos en intervalos pequeños.
 
-La interpolación lineal es uno de los métodos más simples y directos para estimar el valor de una función entre dos puntos conocidos. Su fundamento es trazar una recta que una dos puntos adyacentes de un conjunto de datos y utilizar la ecuación de esa recta para encontrar valores intermedios. Este método supone que el comportamiento de la función entre dos puntos es lineal, es decir, cambia a una tasa constante.
+Este método es muy útil cuando se dispone de pocos datos y se necesita una solución rápida y razonablemente precisa. Sin embargo, si la función presenta cambios no lineales, la precisión disminuye y pueden aparecer errores.
 
-Este tipo de interpolación resulta muy útil cuando se cuenta con pocos datos y se necesita una solución rápida y suficientemente precisa para un intervalo pequeño. Aunque su simplicidad lo hace accesible, también implica una limitación importante: la precisión puede disminuir significativamente si la función real cambia de forma no lineal entre los puntos, lo que genera errores de estimación.
-
-A pesar de su sencillez, la interpolación lineal se utiliza ampliamente en aplicaciones de ingeniería y ciencias aplicadas, especialmente como paso preliminar antes de aplicar métodos más complejos. También sirve como base para entender métodos de interpolación más avanzados, como la interpolación polinómica o spline.
-
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Muy simple de implementar y computacionalmente eficiente.
-- Útil para datos con comportamiento aproximadamente lineal o intervalos pequeños.
-- Sirve como base para métodos de interpolación más avanzados.
-
-**Desventajas:**
-- Pierde precisión si la función tiene un comportamiento no lineal.
-- No es adecuado para intervalos grandes o funciones con cambios bruscos.
-- Puede introducir errores significativos si los datos no son representativos.
+A pesar de sus limitaciones, la interpolación lineal es ampliamente utilizada como primer paso en análisis numéricos, y es la base para métodos más complejos como la interpolación polinómica o spline.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```text
+| 🟢 Ventajas                                      | 🔴 Desventajas                                           |
+| ------------------------------------------------ | -------------------------------------------------------- |
+| Muy fácil de implementar y eficiente             | Precisión limitada si la función no es lineal            |
+| Adecuada para intervalos pequeños                | No funciona bien en intervalos grandes o cambios bruscos |
+| Base para métodos de interpolación más avanzados | Puede generar errores significativos con datos pobres    |
+
+---
+
+## ⚙️ Pseudocódigo
+
+```plaintext
 Inicio
   Definir x como vector de reales [n]
   Definir y como vector de reales [n]
@@ -48,13 +43,13 @@ Inicio
     Fin Si
   Fin Para
 
-  Imprimir "Punto fuera del rango de interpolación"
+  Imprimir "El punto está fuera del rango de interpolación"
 Fin
 ```
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseLinearInterpolation {
@@ -71,14 +66,14 @@ public class CodigoBaseLinearInterpolation {
                 return;
             }
         }
-        System.out.println("Punto fuera del rango de interpolación");
+        System.out.println("El punto está fuera del rango de interpolación");
     }
 }
 ```
 
 ---
 
-### Ejemplo funcional en Java
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class LinearInterpolation {
@@ -88,7 +83,7 @@ public class LinearInterpolation {
         }
         for (int i = 1; i < x.length; i++) {
             if (x[i] <= x[i - 1]) {
-                throw new IllegalArgumentException("El vector x debe estar ordenado en orden ascendente");
+                throw new IllegalArgumentException("El vector x debe estar ordenado de forma ascendente");
             }
         }
         for (int i = 0; i < x.length - 1; i++) {
@@ -109,7 +104,7 @@ public class LinearInterpolation {
             double yp = interpolate(x, y, xp);
             System.out.printf("Interpolación lineal:%n");
             System.out.printf("Punto interpolado: x = %.1f, y = %.3f%n", xp, yp);
-            System.out.printf("Puntos usados: (%.1f, %.3f), (%.1f, %.3f)%n", x[1], y[1], x[2], y[2]);
+            System.out.printf("Puntos utilizados: (%.1f, %.3f), (%.1f, %.3f)%n", x[1], y[1], x[2], y[2]);
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
         }
@@ -119,11 +114,14 @@ public class LinearInterpolation {
 
 ---
 
-### Caso de prueba:
+## 🧪 Resultado esperado
 
-```text
+```
 Interpolación lineal:
 Punto interpolado: x = 1.5, y = 5.054
-Puntos usados: (1.0, 2.718), (2.0, 7.389)
+Puntos utilizados: (1.0, 2.718), (2.0, 7.389)
 ```
-### [<- T5 - Interpolación y Ajuste de Funciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
+
+---
+
+### 🔙 [← Volver al índice del Tema 5 - Interpolación y Ajuste de Funciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
