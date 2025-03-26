@@ -1,9 +1,7 @@
 
 <div align="center">
-
-🎯 Tema 6: Método de Runge-Kutta
-
-</div># 
+##🎯 Tema 6: Método de Runge-Kutta
+</div>
 
 ---
 
