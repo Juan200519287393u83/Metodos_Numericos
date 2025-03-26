@@ -1,6 +1,8 @@
+<div align="center">
 
-# Tema 6: Método de un paso
+# 🎯 Tema 6: Método de un paso
 
+</div>
 ## 🧠 Introducción
 
 Los **métodos de un paso** son técnicas numéricas utilizadas para resolver ecuaciones diferenciales ordinarias (EDO) cuya principal característica es que el valor siguiente de la solución depende únicamente del valor actual. A diferencia de los métodos de pasos múltiples, no necesitan almacenar valores anteriores, lo que simplifica su implementación.
