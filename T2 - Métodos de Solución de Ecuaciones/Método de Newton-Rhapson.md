@@ -1,70 +1,65 @@
-# Tema 2: Método de Newton-Raphson
 
-## Introducción
+# ⚙️ Tema 2: Método de Newton-Raphson
 
-El método de Newton-Raphson es uno de los más utilizados para encontrar raíces de funciones debido a su velocidad y eficiencia. A partir de una suposición inicial cercana a la solución, el método mejora progresivamente dicha aproximación utilizando información del comportamiento local de la función. Esta estrategia permite acercarse rápidamente al valor buscado si las condiciones iniciales son adecuadas.
-
-Uno de los principales requisitos para aplicar este método es que la función sea derivable, ya que el proceso se basa en analizar la pendiente de la función en cada paso. Si la derivada es cero o muy pequeña cerca del valor buscado, el método puede fallar o divergir, lo que lo hace sensible a la elección del punto de inicio.
-
-A pesar de estas limitaciones, cuando se utiliza correctamente, el método de Newton-Raphson destaca por su rapidez en comparación con otros métodos. Es especialmente útil en funciones suaves y bien definidas, y se convierte en una herramienta poderosa para problemas en ingeniería, ciencias aplicadas y matemáticas computacionales.
+> 📌 **Categoría:** Métodos de Solución de Ecuaciones  
+> 🚀 **Nivel:** Intermedio  
+> ⚡ **Aplicación:** Aproximación rápida de raíces de funciones derivables
 
 ---
 
-### Ventajas y Desventajas
+## 🧠 ¿Qué es el Método de Newton-Raphson?
 
-**Ventajas:**
-- Converge rápidamente (con orden cuadrático) si la suposición inicial es buena y la función es bien comportada.
-- Requiere menos iteraciones que métodos como la bisección para alcanzar la misma precisión.
-- Es ideal para funciones suaves y derivables, comunes en aplicaciones prácticas.
+El **método de Newton-Raphson** es una técnica numérica ampliamente utilizada para encontrar raíces de funciones reales. A partir de una **estimación inicial**, este método mejora progresivamente la solución utilizando la derivada de la función, logrando una **rápida convergencia** cuando se aplican condiciones adecuadas.
 
-**Desventajas:**
-- Sensible a la elección del punto inicial; una mala elección puede llevar a divergencia.
-- Requiere calcular la derivada de la función, lo que puede ser complicado o costoso computacionalmente.
-- Puede fallar si la derivada es cero o muy pequeña cerca de la raíz, o si la función tiene discontinuidades.
+🔍 Se basa en la fórmula:
 
----
-
-### Pseudocódigo
-
-```text
-Inicio
-  Función f(x)
-    Retornar x^3 - x - 2
-  Fin Función
-
-  Función fPrima(x)
-    Retornar 3 * x^2 - 1
-  Fin Función
-
-  Definir x como real
-  Definir tolerancia como real
-  Definir maxIteraciones como entero
-  Definir iteracion como entero
-  Definir fx como real
-
-  x = 1.5
-  tolerancia = 0.001
-  maxIteraciones = 100
-  iteracion = 0
-
-  Mientras iteracion < maxIteraciones
-    fx = f(x)
-    Imprimir "Iteración ", iteracion, ": x = ", x, ", f(x) = ", fx
-
-    Si abs(fx) < tolerancia
-      Imprimir "Raíz encontrada: ", x
-      Retornar
-    Fin Si
-
-    x = x - fx / fPrima(x)
-    iteracion = iteracion + 1
-  Fin Mientras
-
-  Imprimir "Máximo de iteraciones alcanzado"
-Fin
 ```
 
-### Código base en Java
+xₙ₊₁ = xₙ - f(xₙ) / f'(xₙ)
+
+````
+
+Para que funcione correctamente, es crucial que:
+- La función sea continua y derivable.
+- La derivada no sea cero en la vecindad de la raíz.
+- La suposición inicial esté cerca de la solución real.
+
+Cuando estas condiciones se cumplen, el método ofrece resultados precisos en muy pocas iteraciones.
+
+---
+
+## ⚖️ Ventajas y Desventajas
+
+| ✅ Ventajas                                                                       | ⚠️ Desventajas                                                                 |
+|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| Convergencia rápida (orden cuadrático) con una buena suposición inicial.         | Puede divergir si el punto inicial está lejos o si la derivada es muy pequeña. |
+| Requiere menos iteraciones que otros métodos como la bisección.                  | Necesita el cálculo de la derivada, que puede ser complejo.                    |
+| Ideal para funciones suaves, comunes en ingeniería y ciencia aplicada.           | No es apto para funciones discontinuas o no derivables.                        |
+
+---
+
+## 🧮 Pseudocódigo
+
+```java
+Inicio
+  Función f(x) -> Retornar x^3 - x - 2
+  Función fPrima(x) -> Retornar 3 * x^2 - 1
+
+  Inicializar: x = 1.5, tolerancia = 0.001, maxIter = 100
+  iteracion = 0
+
+  Mientras iteracion < maxIter:
+    fx = f(x)
+    Mostrar iteración, x, fx
+    Si |fx| < tolerancia → Retornar x como raíz
+    x = x - fx / fPrima(x)
+    iteracion++
+Fin
+````
+
+---
+
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseNewtonRaphson {
@@ -80,26 +75,27 @@ public class CodigoBaseNewtonRaphson {
         double x = 1.5;
         double tolerancia = 0.001;
         int maxIteraciones = 100;
-        int iteracion = 0;
 
-        while (iteracion < maxIteraciones) {
+        for (int i = 0; i < maxIteraciones; i++) {
             double fx = f(x);
-            System.out.println("Iteración " + iteracion + ": x = " + x + ", f(x) = " + fx);
+            System.out.printf("Iteración %d: x = %.3f, f(x) = %.3f%n", i, x, fx);
 
             if (Math.abs(fx) < tolerancia) {
-                System.out.println("Raíz encontrada: " + x);
+                System.out.printf("Raíz encontrada: %.3f%n", x);
                 return;
             }
 
             x = x - fx / fPrima(x);
-            iteracion++;
         }
+
         System.out.println("Máximo de iteraciones alcanzado");
     }
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo funcional
 
 ```java
 public class NewtonRaphsonMethod {
@@ -127,16 +123,21 @@ public class NewtonRaphsonMethod {
 
             x = x - fx / fPrima(x);
         }
+
         System.out.println("Máximo de iteraciones alcanzado");
     }
 }
 ```
 
-### Caso de prueba:
+---
+
+## 🔬 Salida esperada
 
 ```text
 Iteración 0: x = 1.500, f(x) = -0.125
 Iteración 1: x = 1.521, f(x) = 0.001
-Raíz encontrada: 1.521
+✅ Raíz encontrada: 1.521
 ```
-### [<- Regresar a T2 - Métodos de Solución de Ecuaciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
+## 🔗 Navegación
+
+[🔙 Regresar a T2 - Introducción a los Métodos de Solución de Ecuaciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
