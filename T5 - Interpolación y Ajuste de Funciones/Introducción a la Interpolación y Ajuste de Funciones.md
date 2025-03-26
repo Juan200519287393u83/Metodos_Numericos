@@ -1,19 +1,21 @@
-### [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
+### 🔙 [Volver al Índice General](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
-# Tema 5: Interpolación y Ajuste de Funciones
-## Introducción General
-En el campo de los métodos numéricos, la interpolación y el ajuste de funciones son herramientas fundamentales que permiten representar conjuntos de datos discretos mediante funciones matemáticas continuas. Estas técnicas son ampliamente utilizadas en ingeniería, física, economía y otras ciencias aplicadas, especialmente cuando se necesita estimar el comportamiento de una variable a partir de un número limitado de observaciones experimentales o simuladas.
+# 📈 Tema 5: Interpolación y Ajuste de Funciones
 
-La interpolación consiste en construir una función que pase exactamente por un conjunto dado de puntos. Es decir, se busca una expresión matemática que “interpole” los datos, proporcionando estimaciones exactas dentro del rango de los valores conocidos. Entre los métodos más comunes se encuentran la interpolación lineal, polinómica y la de Newton o Lagrange. Cada uno tiene ventajas y limitaciones en cuanto a precisión, complejidad y estabilidad numérica.
+## 📝 Descripción General
 
-Por otro lado, el ajuste de funciones (también llamado regresión) no busca necesariamente que la función pase por todos los puntos, sino que represente de la mejor forma posible la tendencia general de los datos, minimizando el error entre la función y los puntos dados. Es especialmente útil cuando los datos contienen ruido o errores de medición. El ajuste más común es el de mínimos cuadrados, que permite encontrar funciones lineales o no lineales que mejor se adaptan a los datos disponibles.
+Dentro de los métodos numéricos, la **interpolación** y el **ajuste de funciones** son técnicas clave para transformar conjuntos de datos discretos en representaciones matemáticas continuas. Estas herramientas se aplican en numerosas áreas como la ingeniería, física, economía y ciencias aplicadas, permitiendo estimar y analizar variables a partir de un número limitado de puntos experimentales o simulados.
 
-Ambas técnicas permiten extrapolar o predecir valores en puntos donde no se tienen mediciones, facilitar cálculos posteriores y analizar el comportamiento de fenómenos complejos. El conocimiento y aplicación adecuada de estos métodos son esenciales para realizar modelos numéricos precisos, tomar decisiones informadas basadas en datos, y construir soluciones computacionales robustas en una amplia gama de disciplinas científicas y tecnológicas.
+La **interpolación** busca construir una función matemática que pase exactamente por todos los puntos dados, garantizando estimaciones precisas dentro del rango conocido. Entre las técnicas más utilizadas se encuentran la interpolación lineal, polinómica y los métodos de Newton o Lagrange, cada uno con sus propias ventajas en términos de exactitud, complejidad y estabilidad numérica.
 
-Existen muchos métodos y tipos de interpolación. Algunos de esos son:
-- [Interpolación Lineal](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Interpolaci%C3%B3n%20Lineal.md)
-- [Interpolación Polinómica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Interpolaci%C3%B3n%20Polin%C3%B3mica.md)
-- [Método de Regresión](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/M%C3%A9todo%20de%20Regresi%C3%B3n.md)
-- [Método de Correlación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/M%C3%A9todo%20de%20Correlaci%C3%B3n.md)
-- [Método de Mínimos Cuadrados](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/M%C3%A9todo%20de%20M%C3%ADnimos%20Cuadrados.md)
+En contraste, el **ajuste de funciones** o regresión, no intenta que la función atraviese todos los puntos, sino que modela la tendencia general de los datos minimizando la discrepancia entre la función y las observaciones, especialmente útil cuando los datos contienen ruido o imprecisiones. El método de mínimos cuadrados es el más común para obtener funciones que se ajustan óptimamente a los datos, ya sean lineales o no lineales.
 
+Estas metodologías facilitan la extrapolación, predicción y análisis de fenómenos complejos, siendo esenciales para el desarrollo de modelos numéricos precisos y soluciones computacionales robustas en múltiples disciplinas científicas y tecnológicas.
+
+## 📂 Métodos destacados:
+
+* 🔹 [Interpolación Lineal](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Interpolaci%C3%B3n%20Lineal.md)
+* 🔹 [Interpolación Polinómica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Interpolaci%C3%B3n%20Polin%C3%B3mica.md)
+* 🔹 [Método de Regresión](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/M%C3%A9todo%20de%20Regresi%C3%B3n.md)
+* 🔹 [Método de Correlación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/M%C3%A9todo%20de%20Correlaci%C3%B3n.md)
+* 🔹 [Método de Mínimos Cuadrados](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/M%C3%A9todo%20de%20M%C3%ADnimos%20Cuadrados.md)
