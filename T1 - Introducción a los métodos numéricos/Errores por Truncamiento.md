@@ -1,30 +1,30 @@
-## Tema 1: Error de Truncamiento
+### 🔙 [← Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
 
-# ¿Qué es?
-
-El error de truncamiento se produce cuando se interrumpe o se simplifica una operación matemática infinita o continua para poder ser calculada de forma finita. Por ejemplo, al utilizar una serie de Taylor para aproximar funciones, es necesario cortar la serie después de un número determinado de términos, lo que introduce un error al omitir los términos restantes.
-
-La magnitud del error de truncamiento depende del número de términos o pasos utilizados en la aproximación: a mayor cantidad de términos considerados, menor será el error, pero mayor será el costo computacional. Existe un compromiso entre precisión y eficiencia que debe ser evaluado según el problema específico.
+# ⚠️ Tema 1: Error de Truncamiento
 
 ---
 
-### Ventajas y Desventajas
+### ❓ ¿Qué es?
 
-**Ventajas:**
-- Permite realizar cálculos aproximados de funciones complejas que serían imposibles de calcular de forma exacta.
-- Ofrece un control directo sobre el balance entre precisión y costo computacional al ajustar el número de términos.
-- Es útil en aplicaciones prácticas donde una aproximación suficientemente precisa es aceptable.
+El **error de truncamiento** ocurre cuando se interrumpe o simplifica una operación matemática infinita o continua para poder calcularla de forma finita. Por ejemplo, al usar la serie de Taylor para aproximar funciones, se corta la serie después de un número limitado de términos, introduciendo un error al omitir los restantes.
 
-**Desventajas:**
-- Introduce un error inherente que puede acumularse en cálculos posteriores.
-- Requiere un análisis cuidadoso para determinar el número adecuado de términos y minimizar el error.
-- Puede ser computacionalmente costoso si se necesitan muchos términos para alcanzar la precisión deseada.
+La magnitud del error depende del número de términos usados: más términos, menor error, pero mayor costo computacional. Existe un equilibrio entre precisión y eficiencia que debe evaluarse según el problema.
 
 ---
 
-### Pseudocódigo
+### ✅ Ventajas y ❌ Desventajas
 
-```java
+| ✅ **Ventajas**                                                | ❌ **Desventajas**                                                        |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Permite aproximar funciones complejas imposibles de calcular  | Introduce un error inherente que puede acumularse                        |
+| Control directo del balance precisión vs. costo computacional | Requiere análisis cuidadoso para elegir número adecuado de términos      |
+| Útil en aplicaciones prácticas con aproximaciones aceptables  | Puede ser costoso si se necesitan muchos términos para precisión deseada |
+
+---
+
+### 📝 Pseudocódigo
+
+```text
 Inicio
   Función funciónReal(x)
     Retornar exp(x)
@@ -54,7 +54,9 @@ Inicio
 Fin
 ```
 
-### Código base en Java
+---
+
+### 💻 Código base en Java
 
 ```java
 public class CodigoBaseTruncamiento {
@@ -87,7 +89,9 @@ public class CodigoBaseTruncamiento {
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+### 🛠 Ejemplo funcional en Java
 
 ```java
 public class ErrorTruncamiento {
@@ -116,11 +120,12 @@ public class ErrorTruncamiento {
 }
 ```
 
-### Caso de prueba:
+---
+
+### 📋 Caso de prueba:
 
 ```text
 Valor real: 2.718
 Aproximación (n=3): 2.667
 Error de truncamiento: 0.051
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
