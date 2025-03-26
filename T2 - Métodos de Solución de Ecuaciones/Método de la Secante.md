@@ -1,73 +1,64 @@
-# Tema 2: Método de la Secante
+# ⚡ Tema 2: Método de la Secante
 
-## Introducción
-
-El método de la secante es una técnica iterativa para encontrar raíces que busca mejorar la eficiencia del método de Newton-Raphson, eliminando la necesidad de calcular derivadas. A partir de dos valores iniciales, se genera una aproximación de la raíz trazando una línea recta entre los puntos evaluados de la función y encontrando su intersección con el eje horizontal. Este proceso se repite usando los dos valores más recientes.
-
-Este enfoque tiene la ventaja de ser más rápido que métodos como la bisección y más práctico que Newton-Raphson cuando no se dispone de la derivada de la función. Sin embargo, es menos estable y puede divergir si los valores iniciales no están bien escogidos o si la función es muy irregular o no cumple ciertas condiciones.
-
-El método de la secante es muy útil en situaciones donde la derivada es difícil de calcular o simplemente no está disponible. Aunque no siempre garantiza la convergencia, su simplicidad y eficiencia lo convierten en una opción atractiva en problemas reales donde se busca una solución rápida con bajo costo computacional.
+> 📌 **Categoría:** Métodos de Solución de Ecuaciones  
+> 🔁 **Tipo:** Método iterativo abierto  
+> 🎯 **Propósito:** Aproximar raíces de funciones sin necesidad de derivadas
 
 ---
 
-### Ventajas y Desventajas
+## 🧠 ¿Qué es el Método de la Secante?
 
-**Ventajas:**
-- No requiere calcular derivadas, lo que lo hace más práctico que el método de Newton-Raphson.
-- Converge más rápido que el método de bisección en muchos casos.
-- Es simple de implementar y eficiente para funciones bien comportadas.
+El **método de la secante** es una técnica numérica que permite encontrar una raíz de una función continua sin necesidad de calcular derivadas. A partir de dos puntos iniciales \( x_0 \) y \( x_1 \), el método traza una línea recta (secante) entre los puntos \( (x_0, f(x_0)) \) y \( (x_1, f(x_1)) \), y encuentra la intersección de esta línea con el eje \( x \):
 
-**Desventajas:**
-- La convergencia no está garantizada y puede divergir si los valores iniciales no son adecuados.
-- Es menos estable que métodos como la bisección o la regla falsa, especialmente en funciones irregulares.
-- Puede ser sensible a la elección de los puntos iniciales y a la forma de la función.
+```
+
+x₂ = x₁ - f(x₁) \* (x₁ - x₀) / (f(x₁) - f(x₀))
+
+````
+
+Este nuevo punto se convierte en una mejor aproximación a la raíz. El proceso se repite utilizando los dos valores más recientes.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
+
+| ✅ Ventajas                                                                 | ⚠️ Desventajas                                                                     |
+|-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| No requiere derivadas (a diferencia de Newton-Raphson).                     | La convergencia no está garantizada.                                               |
+| Puede ser más rápido que métodos como bisección y regla falsa.              | Menos estable: puede divergir en funciones mal condicionadas o elecciones pobres.  |
+| Simple de implementar.                                                      | Sensible a los valores iniciales y la forma de la función.                         |
+
+---
+
+## 🧮 Pseudocódigo
 
 ```text
 Inicio
-  Función f(x)
-    Retornar x^3 - x - 2
-  Fin Función
+  Función f(x) → x^3 - x - 2
 
-  Definir x0 como real
-  Definir x1 como real
-  Definir tolerancia como real
-  Definir maxIteraciones como entero
-  Definir iteracion como entero
-  Definir x2 como real
-  Definir fx0 como real
-  Definir fx1 como real
-
-  x0 = 1.0
-  x1 = 2.0
-  tolerancia = 0.001
-  maxIteraciones = 100
+  Inicializar: x0 = 1.0, x1 = 2.0, tolerancia = 0.001, maxIter = 100
   iteracion = 0
 
-  Mientras iteracion < maxIteraciones
+  Mientras iteracion < maxIter:
     fx0 = f(x0)
     fx1 = f(x1)
     x2 = x1 - (fx1 * (x1 - x0)) / (fx1 - fx0)
-    Imprimir "Iteración ", iteracion, ": x = ", x2, ", f(x) = ", f(x2)
+    Mostrar iteración, x2, f(x2)
 
-    Si abs(f(x2)) < tolerancia
-      Imprimir "Raíz encontrada: ", x2
-      Retornar
-    Fin Si
+    Si |f(x2)| < tolerancia → Retornar x2 como raíz
 
     x0 = x1
     x1 = x2
-    iteracion = iteracion + 1
+    iteracion++
   Fin Mientras
 
-  Imprimir "Máximo de iteraciones alcanzado"
+  Mostrar: "Máximo de iteraciones alcanzado"
 Fin
-```
+````
 
-### Código base en Java
+---
+
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseSecante {
@@ -97,12 +88,15 @@ public class CodigoBaseSecante {
             x1 = x2;
             iteracion++;
         }
+
         System.out.println("Máximo de iteraciones alcanzado");
     }
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class SecantMethod {
@@ -130,16 +124,24 @@ public class SecantMethod {
             x0 = x1;
             x1 = x2;
         }
+
         System.out.println("Máximo de iteraciones alcanzado");
     }
 }
 ```
 
-### Caso de prueba:
+---
+
+## 🔬 Caso de prueba
 
 ```text
 Iteración 0: x = 1.556, f(x) = 0.214
 Iteración 1: x = 1.518, f(x) = 0.002
-Raíz encontrada: 1.518
+✅ Raíz encontrada: 1.518
 ```
-### [<- Regresar a T2 - Métodos de Solución de Ecuaciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
+
+---
+
+## 🔗 Navegación
+
+[🔙 Regresar a T2 - Introducción a los Métodos de Solución de Ecuaciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T2%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Ecuaciones.md)
