@@ -1,6 +1,12 @@
-# Tema 6: Método de Taylor
+---
 
-## Introducción
+<p align="center">
+  <h1>🎯 Tema 6: Método de Taylor</h1>
+</p>
+
+---
+
+## 📚 Introducción
 
 El método de Taylor es una técnica numérica que aprovecha el desarrollo en serie de Taylor para aproximar la solución de una ecuación diferencial ordinaria. Este enfoque considera no solo la primera derivada, sino también derivadas de orden superior, lo cual permite construir una mejor aproximación local de la función.
 
@@ -10,21 +16,17 @@ Este método es especialmente útil cuando se busca comprender el comportamiento
 
 ---
 
-### Ventajas y Desventajas
+## ⚖️ Ventajas y Desventajas
 
-**Ventajas:**
-- Alta precisión local al incluir derivadas de orden superior (error de orden \( O(h^{n+1}) \) para un método de orden \( n \)).
-- Útil para problemas donde las derivadas son fáciles de calcular analíticamente.
-- Proporciona una base teórica sólida para entender otros métodos numéricos.
-
-**Desventajas:**
-- Requiere calcular derivadas de orden superior, lo que puede ser complejo o impracticable.
-- Más costoso computacionalmente si las derivadas no están disponibles de forma cerrada.
-- Menos utilizado en la práctica general debido a la popularidad de métodos como Runge-Kutta.
+| Ventajas                                                         | Desventajas                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Alta precisión local al incluir derivadas de orden superior      | Requiere calcular derivadas de orden superior, complejo          |
+| Útil cuando las derivadas son fáciles de calcular analíticamente | Más costoso computacionalmente si derivadas no están disponibles |
+| Proporciona base teórica para entender otros métodos numéricos   | Menos utilizado en la práctica general                           |
 
 ---
 
-### Pseudocódigo
+## 🧩 Pseudocódigo
 
 ```text
 Inicio
@@ -66,7 +68,7 @@ Fin
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseTaylorMethod {
@@ -104,7 +106,7 @@ public class CodigoBaseTaylorMethod {
 
 ---
 
-### Ejemplo funcional en Java
+## ⚙️ Ejemplo funcional en Java
 
 ```java
 public class TaylorMethod {
@@ -134,25 +136,21 @@ public class TaylorMethod {
         double[] y = new double[n + 1];
         SolutionPoint[] solution = new SolutionPoint[n + 1];
 
-        // Inicializar puntos x
         for (int i = 0; i <= n; i++) {
             x[i] = a + i * h;
             if (i == n && Math.abs(x[i] - b) > 1e-10) {
-                x[i] = b; // Ajustar el último punto al límite b
+                x[i] = b;
             }
         }
 
-        // Condición inicial
         y[0] = y0;
 
-        // Método de Taylor de orden 2
         for (int i = 0; i < n; i++) {
             y[i + 1] = y[i] + h * f(x[i], y[i]) + (h * h / 2) * fPrima(x[i], y[i]);
         }
 
-        // Almacenar resultados con solución analítica
         for (int i = 0; i <= n; i++) {
-            double yExact = Math.exp(-x[i] * x[i]); // Solución analítica: y = e^(-x^2)
+            double yExact = Math.exp(-x[i] * x[i]);
             solution[i] = new SolutionPoint(x[i], y[i], yExact);
         }
 
@@ -164,7 +162,7 @@ public class TaylorMethod {
     }
 
     public static double fPrima(double x, double y) {
-        return -2 * y + 4 * x * x * y; // Simplificado: -2y + 4x^2y
+        return -2 * y + 4 * x * x * y; // Simplificado
     }
 
     public static void main(String[] args) {
@@ -193,22 +191,21 @@ public class TaylorMethod {
 
 ---
 
-### Caso de prueba:
+## 📊 Caso de prueba
 
-```text
-Método de Taylor (orden 2):
-Ecuación diferencial: dy/dx = -2xy
-Condición inicial: y(0.0) = 1.000
-Intervalo: [0.0, 1.0], h = 0.2
-Resultados (y_num: solución numérica, y_exact: solución analítica):
-x = 0.0, y_num = 1.000, y_exact = 1.000, error = 0.000e+00
-x = 0.2, y_num = 0.960, y_exact = 0.961, error = 7.840e-04
-x = 0.4, y_num = 0.852, y_exact = 0.852, error = 2.805e-03
-x = 0.6, y_num = 0.697, y_exact = 0.698, error = 5.946e-03
-x = 0.8, y_num = 0.527, y_exact = 0.527, error = 9.973e-03
-x = 1.0, y_num = 0.368, y_exact = 0.368, error = 1.466e-02
-```
+|  x  | y\_num | y\_exact |   error   |
+| :-: | :----: | :------: | :-------: |
+| 0.0 |  1.000 |   1.000  | 0.000e+00 |
+| 0.2 |  0.960 |   0.961  | 7.840e-04 |
+| 0.4 |  0.852 |   0.852  | 2.805e-03 |
+| 0.6 |  0.697 |   0.698  | 5.946e-03 |
+| 0.8 |  0.527 |   0.527  | 9.973e-03 |
+| 1.0 |  0.368 |   0.368  | 1.466e-02 |
 
 ---
-### [<- Regresar a T6 - Sistemas de Ecuaciones Diferenciales Ordinarias](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/Introducci%C3%B3n%20a%20los%20SIstemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias.md)
 
+## 🔙 Navegación
+
+[⬅️ Regresar a T6 - Sistemas de Ecuaciones Diferenciales Ordinarias](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/Introducci%C3%B3n%20a%20los%20SIstemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias.md)
+
+---
