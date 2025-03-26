@@ -1,139 +1,108 @@
-# Tema 5: Método de Mínimos Cuadrados
-
-## Introducción
-
-El método de mínimos cuadrados es una técnica poderosa para encontrar la función que mejor se ajusta a un conjunto de datos en el sentido de minimizar la suma de los cuadrados de los errores. Estos errores se definen como la diferencia entre los valores observados y los valores estimados por la función propuesta.
-
-El enfoque más común es el ajuste de una recta (modelo lineal) a un conjunto de datos dispersos. Al minimizar el error cuadrático total, este método proporciona la solución más "óptima" bajo ciertos supuestos estadísticos, lo que lo convierte en una herramienta estándar en el análisis de datos y en el modelado de fenómenos experimentales.
-
-Además de su versión lineal, el método de mínimos cuadrados puede extenderse a modelos polinómicos o incluso no lineales, con ayuda de herramientas computacionales. Es una técnica fundamental que no solo permite crear modelos predictivos, sino también comprender mejor las relaciones entre variables y evaluar el grado de ajuste de un modelo a la realidad observada.
+# 📌 Tema 5: Método de Correlación
 
 ---
 
-### Ventajas y Desventajas
+## 🧠 Introducción
 
-**Ventajas:**
-- Proporciona el mejor ajuste lineal en términos de minimización del error cuadrático.
-- Fácil de implementar y computacionalmente eficiente para modelos lineales.
-- Ampliamente aplicable en ciencias, ingeniería y análisis de datos.
+El **método de correlación** cuantifica la fuerza y dirección de la relación lineal entre dos variables numéricas. A diferencia de la regresión, que predice una variable a partir de otra, la correlación simplemente evalúa el grado de asociación entre ambas, sin asumir causalidad.
 
-**Desventajas:**
-- Sensible a valores atípicos, que pueden distorsionar el ajuste de la recta.
-- Asume una relación lineal, lo que puede no ser adecuado para datos con patrones no lineales.
-- Requiere cuidado en la interpretación si los datos no cumplen supuestos estadísticos (como normalidad de errores).
+El coeficiente de correlación más reconocido es el de **Pearson**, que oscila entre \$-1\$ y \$1\$:
+
+* Cercano a **1**: indica una fuerte correlación positiva (ambas variables aumentan simultáneamente).
+* Cercano a **-1**: indica una fuerte correlación negativa (una variable crece mientras la otra decrece).
+* Cercano a **0**: sugiere ausencia o débil relación lineal.
+
+Esta medida es esencial en el análisis exploratorio de datos para detectar patrones y relaciones, recordando siempre que **correlación no implica causalidad**.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```text
+| 🟢 Ventajas                                              | 🔴 Desventajas                                               |
+| -------------------------------------------------------- | ------------------------------------------------------------ |
+| Fácil cálculo e interpretación                           | Mide únicamente relaciones lineales                          |
+| Útil en análisis exploratorios                           | Sensible a valores atípicos                                  |
+| Ampliamente utilizado en estadística y ciencias sociales | No establece causalidad, riesgo de interpretaciones erróneas |
+
+---
+
+## ⚙️ Pseudocódigo
+
+```plaintext
 Inicio
-  Definir x como vector de reales [n]
-  Definir y como vector de reales [n]
-  Definir n como entero
-  Definir sumX, sumY, sumXY, sumX2 como reales
-  Definir m, b como reales
-  Definir i como entero
-
-  x = [0, 1, 2, 3]
-  y = [1, 2.718, 7.389, 20.085]
-  n = 4
-  sumX = 0
-  sumY = 0
-  sumXY = 0
-  sumX2 = 0
+  Definir x, y vectores de reales [n]
+  Inicializar sumX, sumY, sumXY, sumX2, sumY2 = 0
 
   Para i = 0 hasta n-1
-    sumX = sumX + x[i]
-    sumY = sumY + y[i]
-    sumXY = sumXY + x[i] * y[i]
-    sumX2 = sumX2 + x[i] * x[i]
+    sumX  += x[i]
+    sumY  += y[i]
+    sumXY += x[i] * y[i]
+    sumX2 += x[i]^2
+    sumY2 += y[i]^2
   Fin Para
 
-  m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX)
-  b = (sumY - m * sumX) / n
+  r = (n * sumXY - sumX * sumY) / sqrt( (n * sumX2 - sumX^2) * (n * sumY2 - sumY^2) )
 
-  Imprimir "Ecuación de la recta: y = ", m, "x + ", b
+  Imprimir "Coeficiente de correlación: ", r
 Fin
 ```
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
-public class CodigoBaseLeastSquares {
+public class CodigoBaseCorrelation {
     public static void main(String[] args) {
         double[] x = {0, 1, 2, 3};
         double[] y = {1, 2.718, 7.389, 20.085};
         int n = x.length;
-        double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+        double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
 
         for (int i = 0; i < n; i++) {
-            sumX += x[i];
-            sumY += y[i];
+            sumX  += x[i];
+            sumY  += y[i];
             sumXY += x[i] * y[i];
             sumX2 += x[i] * x[i];
+            sumY2 += y[i] * y[i];
         }
 
-        double m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-        double b = (sumY - m * sumX) / n;
+        double r = (n * sumXY - sumX * sumY) / 
+                   Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
 
-        System.out.println("Ecuación de la recta: y = " + m + "x + " + b);
+        System.out.println("Coeficiente de correlación: " + r);
     }
 }
 ```
 
 ---
 
-### Ejemplo funcional en Java
+## ✅ Ejemplo funcional en Java
 
 ```java
-public class LeastSquares {
-    public static class LinearModel {
-        public final double m; // Pendiente
-        public final double b; // Intersección
-        public final double mse; // Error cuadrático medio
-
-        public LinearModel(double m, double b, double mse) {
-            this.m = m;
-            this.b = b;
-            this.mse = mse;
-        }
-    }
-
-    public static LinearModel fitLinearModel(double[] x, double[] y) {
+public class Correlation {
+    public static double calculatePearsonCorrelation(double[] x, double[] y) {
         if (x == null || y == null || x.length != y.length || x.length < 2) {
             throw new IllegalArgumentException("Los vectores x e y deben tener la misma longitud y al menos 2 elementos");
         }
 
         int n = x.length;
-        double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+        double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
 
         for (int i = 0; i < n; i++) {
-            sumX += x[i];
-            sumY += y[i];
+            sumX  += x[i];
+            sumY  += y[i];
             sumXY += x[i] * y[i];
             sumX2 += x[i] * x[i];
+            sumY2 += y[i] * y[i];
         }
 
-        double denominator = n * sumX2 - sumX * sumX;
+        double denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
         if (Math.abs(denominator) < 1e-10) {
-            throw new IllegalArgumentException("No se puede ajustar la recta: datos insuficientes o colineales");
+            throw new IllegalArgumentException("No se puede calcular la correlación: varianza cero o datos constantes");
         }
 
-        double m = (n * sumXY - sumX * sumY) / denominator;
-        double b = (sumY - m * sumX) / n;
-
-        // Calcular el error cuadrático medio (MSE)
-        double mse = 0;
-        for (int i = 0; i < n; i++) {
-            double predicted = m * x[i] + b;
-            mse += Math.pow(y[i] - predicted, 2);
-        }
-        mse /= n;
-
-        return new LinearModel(m, b, mse);
+        return (n * sumXY - sumX * sumY) / denominator;
     }
 
     public static void main(String[] args) {
@@ -141,11 +110,11 @@ public class LeastSquares {
         double[] y = {1, 2.718, 7.389, 20.085};
 
         try {
-            LinearModel model = fitLinearModel(x, y);
-            System.out.printf("Ajuste por mínimos cuadrados:%n");
-            System.out.printf("Ecuación de la recta: y = %.3fx + %.3f%n", model.m, model.b);
-            System.out.printf("Error cuadrático medio: %.3f%n", model.mse);
-            System.out.println("Datos utilizados:");
+            double r = calculatePearsonCorrelation(x, y);
+            System.out.println("Análisis de correlación (Pearson):");
+            System.out.printf("Coeficiente de correlación: %.3f%n", r);
+            System.out.printf("Interpretación: %s%n", interpretCorrelation(r));
+            System.out.println("Datos analizados:");
             for (int i = 0; i < x.length; i++) {
                 System.out.printf("(%.1f, %.3f)%n", x[i], y[i]);
             }
@@ -153,21 +122,32 @@ public class LeastSquares {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+    private static String interpretCorrelation(double r) {
+        if (r > 0.7) return "Fuerte correlación positiva";
+        if (r > 0.3) return "Correlación positiva moderada";
+        if (r > -0.3) return "Correlación débil o inexistente";
+        if (r > -0.7) return "Correlación negativa moderada";
+        return "Fuerte correlación negativa";
+    }
 }
 ```
 
 ---
 
-### Caso de prueba:
+## 🧪 Caso de prueba
 
 ```text
-Ajuste por mínimos cuadrados:
-Ecuación de la recta: y = 6.361x + 0.171
-Error cuadrático medio: 7.687
-Datos utilizados:
+Análisis de correlación (Pearson):
+Coeficiente de correlación: 0.904
+Interpretación: Fuerte correlación positiva
+Datos analizados:
 (0.0, 1.000)
 (1.0, 2.718)
 (2.0, 7.389)
 (3.0, 20.085)
 ```
-### [<- T5 - Interpolación y Ajuste de Funciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
+
+---
+
+### 🔙 [Volver al índice del Tema 5 - Interpolación y Ajuste de Funciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
