@@ -1,58 +1,45 @@
-# Tema 5: Método de Correlación
+# 📌 Tema 5: Método de Correlación
 
-## Introducción
+## 🧠 Introducción
 
-El método de correlación se utiliza para medir la intensidad y dirección de la relación lineal entre dos variables cuantitativas. A diferencia de la regresión, que busca construir una función para predecir una variable a partir de otra, la correlación simplemente evalúa qué tan estrechamente relacionadas están las variables sin implicar necesariamente una relación de causa-efecto.
+El **método de correlación** mide la intensidad y dirección de la relación lineal entre dos variables cuantitativas. A diferencia de la regresión, que busca predecir una variable a partir de otra, la correlación solo evalúa qué tan relacionadas están, sin implicar causa-efecto.
 
-El coeficiente de correlación más común es el de Pearson, que varía entre -1 y 1. Un valor cercano a 1 indica una fuerte correlación positiva, es decir, ambas variables tienden a aumentar juntas. Un valor cercano a -1 indica una correlación negativa, donde una variable aumenta mientras la otra disminuye. Un valor cercano a 0 indica una débil o inexistente relación lineal.
+El coeficiente de correlación más común es el de **Pearson**, que varía entre $-1$ y $1$:
 
-La correlación es útil en la etapa exploratoria de análisis de datos, ya que ayuda a identificar patrones y relaciones que podrían estudiarse más a fondo con otros métodos como la regresión. Es importante recordar que la correlación no implica causalidad, por lo que debe interpretarse con cuidado y en conjunto con el contexto del problema.
+* Cerca de **1**: fuerte correlación positiva (ambas variables aumentan juntas).
+* Cerca de **-1**: fuerte correlación negativa (una aumenta y la otra disminuye).
+* Cerca de **0**: débil o nula relación lineal.
 
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Simple de calcular e interpretar, proporcionando una medida clara de la relación lineal.
-- Útil para identificar patrones en la etapa exploratoria de análisis de datos.
-- Aplicable en una amplia gama de disciplinas, como estadística, economía y ciencias sociales.
-
-**Desventajas:**
-- Solo mide relaciones lineales, ignorando relaciones no lineales o más complejas.
-- Sensible a valores atípicos, que pueden distorsionar el coeficiente de correlación.
-- No implica causalidad, lo que puede llevar a interpretaciones erróneas si no se considera el contexto.
+Es muy útil en análisis exploratorio para detectar patrones, pero recuerda que **correlación no implica causalidad**, por lo que se debe interpretar con cuidado y en contexto.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```text
+| 🟢 Ventajas                                             | 🔴 Desventajas                                               |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| Fácil de calcular e interpretar                         | Solo mide relaciones lineales                                |
+| Útil en análisis exploratorio                           | Sensible a valores atípicos                                  |
+| Amplio uso en estadística, economía y ciencias sociales | No implica causalidad, puede llevar a malas interpretaciones |
+
+---
+
+## ⚙️ Pseudocódigo
+
+```plaintext
 Inicio
-  Definir x como vector de reales [n]
-  Definir y como vector de reales [n]
-  Definir n como entero
-  Definir sumX, sumY, sumXY, sumX2, sumY2 como reales
-  Definir r como real
-  Definir i como entero
-
-  x = [0, 1, 2, 3]
-  y = [1, 2.718, 7.389, 20.085]
-  n = 4
-  sumX = 0
-  sumY = 0
-  sumXY = 0
-  sumX2 = 0
-  sumY2 = 0
+  Definir x, y vectores de reales [n]
+  Inicializar sumX, sumY, sumXY, sumX2, sumY2 = 0
 
   Para i = 0 hasta n-1
-    sumX = sumX + x[i]
-    sumY = sumY + y[i]
-    sumXY = sumXY + x[i] * y[i]
-    sumX2 = sumX2 + x[i] * x[i]
-    sumY2 = sumY2 + y[i] * y[i]
+    sumX += x[i]
+    sumY += y[i]
+    sumXY += x[i] * y[i]
+    sumX2 += x[i]^2
+    sumY2 += y[i]^2
   Fin Para
 
-  r = (n * sumXY - sumX * sumY) / sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY))
+  r = (n * sumXY - sumX * sumY) / sqrt((n * sumX2 - sumX^2) * (n * sumY2 - sumY^2))
 
   Imprimir "Coeficiente de correlación: ", r
 Fin
@@ -60,7 +47,7 @@ Fin
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseCorrelation {
@@ -88,7 +75,7 @@ public class CodigoBaseCorrelation {
 
 ---
 
-### Ejemplo funcional en Java
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class Correlation {
@@ -113,8 +100,7 @@ public class Correlation {
             throw new IllegalArgumentException("No se puede calcular la correlación: varianza cero o datos constantes");
         }
 
-        double r = (n * sumXY - sumX * sumY) / denominator;
-        return r;
+        return (n * sumXY - sumX * sumY) / denominator;
     }
 
     public static void main(String[] args) {
@@ -147,7 +133,7 @@ public class Correlation {
 
 ---
 
-### Caso de prueba:
+## 🧪 Caso de prueba
 
 ```text
 Análisis de correlación (Pearson):
@@ -159,4 +145,7 @@ Datos analizados:
 (2.0, 7.389)
 (3.0, 20.085)
 ```
-### [<- T5 - Interpolación y Ajuste de Funciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
+
+---
+
+### 🔙[Volver al índice del Tema 5 - Interpolación y Ajuste de Funciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
