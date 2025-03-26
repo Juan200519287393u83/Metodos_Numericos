@@ -1,31 +1,28 @@
+### 🔙 [← Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
 
-## Tema 1: Error por Cancelación Numérica
-
-# ¿Qué es?
-
-La cancelación numérica ocurre cuando se restan dos números que son muy cercanos entre sí, lo que provoca una pérdida significativa de cifras significativas. Esta pérdida de precisión puede resultar en errores notables en cálculos posteriores, especialmente cuando los resultados intermedios se utilizan como base para otras operaciones.
-
-Este tipo de error es muy común en ciertos algoritmos y fórmulas, por lo que se recomienda reescribir las expresiones algebraicas o utilizar formulaciones alternativas para evitar cancelaciones. Identificar y prevenir cancelaciones numéricas es clave para diseñar algoritmos estables y confiables.
+# ⚠️ Tema 1: Error por Cancelación Numérica
 
 ---
 
-### Ventajas y Desventajas de Identificar Cancelación Numérica
+### ❓ ¿Qué es?
 
-**Ventajas:**
-- Permite detectar pérdidas significativas de precisión en cálculos matemáticos.
-- Ayuda a rediseñar algoritmos para evitar errores graves en resultados.
-- Mejora la confiabilidad y estabilidad de las soluciones numéricas.
+La **cancelación numérica** ocurre al restar dos números muy cercanos, causando pérdida significativa de cifras significativas y, por ende, errores en cálculos posteriores. Este problema es común en ciertos algoritmos y puede desestabilizar resultados si no se previene.
 
-**Desventajas:**
-- Puede requerir reformulaciones matemáticas más complejas.
-- Aumenta el costo computacional en algunos casos al buscar alternativas estables.
-- No siempre es fácil de detectar en cálculos largos o algoritmos extensos.
+Reescribir expresiones algebraicas o usar formulaciones alternativas es fundamental para evitar este error y diseñar algoritmos numéricos estables y confiables.
 
 ---
 
-## Desarrollo
+### ✅ Ventajas y ❌ Desventajas de Identificar Cancelación Numérica
 
-### Pseudocódigo
+| ✅ **Ventajas**                                           | ❌ **Desventajas**                                        |
+| -------------------------------------------------------- | -------------------------------------------------------- |
+| Detecta pérdidas importantes de precisión                | Puede requerir reformulaciones algebraicas más complejas |
+| Facilita rediseño de algoritmos para mejorar estabilidad | Incrementa costo computacional al buscar alternativas    |
+| Mejora la confiabilidad de resultados                    | Difícil de detectar en cálculos o algoritmos extensos    |
+
+---
+
+### 📝 Pseudocódigo
 
 ```text
 Inicio
@@ -43,7 +40,7 @@ Fin
 
 ---
 
-### Código base en Java
+### 💻 Código Base en Java
 
 ```java
 public class CodigoBaseCancelacion {
@@ -61,7 +58,7 @@ public class CodigoBaseCancelacion {
 
 ---
 
-### Ejemplo funcional en Java
+### 🛠 Ejemplo Funcional en Java
 
 ```java
 public class CancelacionNumerica {
@@ -81,11 +78,10 @@ public class CancelacionNumerica {
 
 ---
 
-### Caso de prueba:
+### 📋 Caso de prueba
 
 ```text
 Resultado calculado: 0.0000001
 Resultado esperado: 0.0000001
 Error por cancelación: 1.3552527156068805E-15
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
