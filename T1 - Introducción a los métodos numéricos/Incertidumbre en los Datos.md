@@ -1,82 +1,85 @@
-## Tema 1: Incertidumbre en los Datos
-
-# ¿Qué es?
-
-En muchos problemas reales, los datos de entrada no se conocen con exactitud absoluta. Esta incertidumbre puede deberse a limitaciones en la medición, ruido experimental, redondeo de valores o estimaciones subjetivas. Como consecuencia, incluso si se utiliza un método numérico exacto, los resultados pueden estar afectados por el error presente en los datos iniciales.
-
-La propagación de esta incertidumbre puede generar errores significativos en el resultado final, especialmente si el problema es sensible a pequeñas variaciones en los datos (mal condicionado). Por ello, se recomienda realizar análisis de sensibilidad y estimaciones de error para comprender su impacto.
+# ⚠️ Tema 1: Incertidumbre en los Datos
 
 ---
 
-### Ventajas y Desventajas
+### ❓ ¿Qué significa?
 
-**Ventajas:**
-- Permite modelar y analizar problemas reales donde los datos son intrínsecamente imprecisos.
-- Facilita la evaluación de rangos de resultados posibles mediante análisis de sensibilidad.
-- Ayuda a tomar decisiones informadas al considerar la incertidumbre en los datos.
+En numerosos problemas prácticos, los valores de entrada no se conocen con total exactitud. Esta imprecisión puede originarse por limitaciones en los instrumentos de medición, ruido en las pruebas experimentales, redondeos o estimaciones aproximadas. Por lo tanto, aun empleando un método numérico preciso, los resultados pueden verse afectados por errores inherentes a los datos iniciales.
 
-**Desventajas:**
-- Introduce incertidumbre en los resultados, lo que puede dificultar la interpretación exacta.
-- Requiere métodos adicionales para estimar y controlar el impacto de los errores.
-- Puede aumentar la complejidad computacional al realizar múltiples cálculos para diferentes escenarios.
+Esta incertidumbre puede propagarse y generar desviaciones considerables en el resultado final, especialmente en problemas donde pequeñas variaciones afectan mucho el resultado (problemas mal condicionados). Por eso, se recomienda realizar análisis de sensibilidad y estimaciones para evaluar su impacto.
 
 ---
 
-### Pseudocódigo
+### ✅ Ventejas y ❌ Deventajas 
 
-```java
+| ✅ **Ventejas**                                         | ❌ **Deventajas**                                              |
+| -------------------------------------------------------- | --------------------------------------------------------------- |
+| Permite abordar problemas con datos que no son exactos   | Introduce incertidumbre que complica la interpretación          |
+| Facilita la evaluación de posibles rangos de resultados  | Requiere técnicas adicionales para evaluar y controlar errores  |
+| Apoya la toma de decisiones considerando las variaciones | Puede incrementar la carga computacional por análisis múltiples |
+
+---
+
+### 📝 Pseudocódigo
+
+```text
 Inicio
-  Definir medicionOriginal como real
-  Definir errorSensor como real
-  Definir minimo como real
-  Definir maximo como real
-  medicionOriginal = 9.81
-  errorSensor = 0.05
-  minimo = medicionOriginal - errorSensor
-  maximo = medicionOriginal + errorSensor
-  Imprimir "Medición original: ", medicionOriginal
-  Imprimir "Rango con incertidumbre: [", minimo, ", ", maximo, "]"
+  Definir valorMedido como real
+  Definir margenError como real
+  Definir limiteInferior como real
+  Definir limiteSuperior como real
+  valorMedido = 9.81
+  margenError = 0.05
+  limiteInferior = valorMedido - margenError
+  limiteSuperior = valorMedido + margenError
+  Imprimir "Valor medido: ", valorMedido
+  Imprimir "Intervalo de incertidumbre: [", limiteInferior, ", ", limiteSuperior, "]"
 Fin
 ```
 
-### Código base en Java
+---
+
+### 💻 Código base en Java
 
 ```java
 public class CodigoBaseIncertidumbre {
     public static void main(String[] args) {
-        double medicionOriginal = 9.81;
-        double errorSensor = 0.05;
-        double minimo = medicionOriginal - errorSensor;
-        double maximo = medicionOriginal + errorSensor;
+        double valorMedido = 9.81;
+        double margenError = 0.05;
+        double limiteInferior = valorMedido - margenError;
+        double limiteSuperior = valorMedido + margenError;
 
-        System.out.println("Medición original: " + medicionOriginal);
-        System.out.println("Rango con incertidumbre: [" + minimo + ", " + maximo + "]");
+        System.out.println("Valor medido: " + valorMedido);
+        System.out.println("Intervalo de incertidumbre: [" + limiteInferior + ", " + limiteSuperior + "]");
     }
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+### 🛠 Ejemplo funcional en Java
 
 ```java
 public class IncertidumbreDatos {
     public static void main(String[] args) {
-        double valorMedido = 100.0;
-        double margenError = 2.5;
-        double minimo = valorMedido - margenError;
-        double maximo = valorMedido + margenError;
+        double medicion = 100.0;
+        double tolerancia = 2.5;
+        double limiteInferior = medicion - tolerancia;
+        double limiteSuperior = medicion + tolerancia;
 
-        System.out.printf("Valor medido: %.3f%n", valorMedido);
-        System.out.printf("Rango estimado: [%.3f, %.3f]%n", minimo, maximo);
-        System.out.printf("Incertidumbre en los datos: ±%.3f%n", margenError);
+        System.out.printf("Medición: %.3f%n", medicion);
+        System.out.printf("Intervalo estimado: [%.3f, %.3f]%n", limiteInferior, limiteSuperior);
+        System.out.printf("Incertidumbre: ±%.3f%n", tolerancia);
     }
 }
 ```
 
-### Caso de prueba:
+---
 
-```java
-Valor medido: 100.000
-Rango estimado: [97.500, 102.500]
-Incertidumbre en los datos: ±2.500
+### 📋 Resultado esperado:
+
+```text
+Medición: 100.000
+Intervalo estimado: [97.500, 102.500]
+Incertidumbre: ±2.500
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
