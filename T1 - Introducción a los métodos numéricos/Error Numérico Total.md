@@ -1,52 +1,63 @@
-## Tema 1: Tipos de Errores Numéricos
-# Error Numérico Total
+### 🔙 [← Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
 
-### ¿Qué es?
+# 📊 Tema 1: Tipos de Errores Numéricos
 
-El error numérico total es la combinación de todos los errores que pueden surgir en un cálculo numérico. Representa la diferencia neta entre el valor exacto teórico de una cantidad y el valor obtenido mediante una aproximación. Este error engloba errores de redondeo, truncamiento, errores del modelo matemático e incluso errores por cancelación o incertidumbre en los datos de entrada.
+## ⚠️ Error Numérico Total
 
-Comprender el error numérico total es fundamental para evaluar la confiabilidad de los resultados obtenidos con métodos numéricos. Este análisis permite decidir qué método aplicar, cuántas iteraciones realizar o cuánta precisión es necesaria en los datos iniciales para obtener un resultado aceptable.
+---
 
-### Ventajas y Desventajas
+### ❓ ¿Qué es?
 
-#### Ventajas
-- **Evaluación integral**: Permite cuantificar el impacto combinado de todos los errores en un cálculo, ofreciendo una visión completa de la precisión del resultado.
-- **Toma de decisiones informada**: Ayuda a elegir métodos numéricos adecuados y a determinar el nivel de precisión requerido para los datos o iteraciones.
-- **Identificación de problemas**: Facilita la detección de fuentes de error (como redondeo o truncamiento), lo que permite optimizar algoritmos o ajustar modelos.
-- **Aplicabilidad universal**: Es un concepto aplicable a cualquier método numérico, desde cálculos simples hasta simulaciones complejas.
+El **Error Numérico Total** es la diferencia global entre el valor exacto (teórico) y el valor aproximado obtenido en un cálculo numérico. Incluye distintos tipos de errores:
 
-#### Desventajas
-- **Dificultad de desglose**: Puede ser complicado separar las contribuciones individuales de cada tipo de error (redondeo, truncamiento, etc.) dentro del error total.
-- **Dependencia de datos precisos**: Requiere conocer el valor exacto o una aproximación muy precisa para calcular el error, lo cual no siempre es posible.
-- **Costo computacional**: Analizar y minimizar el error numérico total puede requerir cálculos adicionales o métodos más complejos, aumentando el tiempo de procesamiento.
-- **Limitaciones en aplicaciones prácticas**: En problemas reales con múltiples variables, el error numérico total puede ser difícil de estimar debido a la incertidumbre en los datos de entrada.
+* Redondeo
+* Truncamiento
+* Errores del modelo
+* Cancelación
+* Incertidumbre en datos de entrada
 
-# Pseudocódigo
-## Error Numérico Total
+> Comprender este error es crucial para evaluar la precisión y confiabilidad de los métodos numéricos aplicados.
+
+---
+
+### ✅ Ventajas y ❌ Desventajas
+
+| ✅ **Ventajas**                            | ❌ **Desventajas**                                              |
+| ----------------------------------------- | -------------------------------------------------------------- |
+| Evaluación integral de la precisión total | Difícil desglose de errores individuales                       |
+| Facilita la toma de decisiones informadas | Requiere conocer valores exactos o muy precisos                |
+| Identifica fuentes principales de error   | Puede aumentar costos computacionales                          |
+| Aplicable a cualquier método numérico     | Difícil estimación en problemas reales con múltiples variables |
+
+---
+
+### 📝 Pseudocódigo para calcular el Error Numérico Total
+
 ```java
-        Inicio
-          Definir real como real
-          Definir aproximado como real
-          Definir errorTotal como real
-          real = sqrt(2)
-          aproximado = 1.414
-          errorTotal = abs(real - aproximado)
-          Imprimir "Valor real: ", real
-          Imprimir "Valor aproximado: ", aproximado
-          Imprimir "Error numérico total: ", errorTotal
-        Fin
+Inicio
+  Definir real, aproximado, errorTotal como reales
+
+  real = sqrt(2)
+  aproximado = 1.414
+  errorTotal = abs(real - aproximado)
+
+  Imprimir "Valor real: ", real
+  Imprimir "Valor aproximado: ", aproximado
+  Imprimir "Error numérico total: ", errorTotal
+Fin
 ```
-# Código base
-```java
 
-    public class ErrorNumerico {
+---
+
+### 💻 Código Base en Java
+
+```java
+public class ErrorNumerico {
     public static void main(String[] args) {
-        // Definir variables
         double real = Math.sqrt(2);
         double aproximado = 1.414;
         double errorTotal = Math.abs(real - aproximado);
 
-        // Imprimir resultados
         System.out.println("Valor real: " + real);
         System.out.println("Valor aproximado: " + aproximado);
         System.out.println("Error numérico total: " + errorTotal);
@@ -54,29 +65,30 @@ Comprender el error numérico total es fundamental para evaluar la confiabilidad
 }
 ```
 
+---
 
-## Ejemplo en Java con salida esperada
+### 🛠 Ejemplo Completo con Salida Formateada
+
 ```java
-   Error Numérico Total
-    public class ErrorTotal {
-        public static void main(String[] args) {
-            double valorReal = Math.sqrt(2);
-            double valorAproximado = 1.4142;
-    
-            double error = Math.abs(valorReal - valorAproximado);
-    
-            System.out.printf("Valor real: %.3f%n", valorReal);
-            System.out.printf("Valor aproximado: %.3f%n", valorAproximado);
-            System.out.printf("Error numérico total: %.3f%n", error);
-        }
+public class ErrorTotal {
+    public static void main(String[] args) {
+        double valorReal = Math.sqrt(2);
+        double valorAproximado = 1.4142;
+
+        double error = Math.abs(valorReal - valorAproximado);
+
+        System.out.printf("Valor real: %.4f%n", valorReal);
+        System.out.printf("Valor aproximado: %.4f%n", valorAproximado);
+        System.out.printf("Error numérico total: %.6f%n", error);
     }
-
-```
-**Caso de prueba**
-```markdown
-    Valor real: 1.414  
-    Valor aproximado: 1.414  
-    Error numérico total: 0.000  
+}
 ```
 
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
+---
+
+### 📋 Salida Esperada
+
+```
+Valor real: 1.4142  
+Valor aproximado: 1.4142  
+Error numérico total: 0.000014
