@@ -1,66 +1,53 @@
+# 📈 Tema 5: Método de Regresión
 
-# Tema 5: Método de Regresión
-
-## Introducción
-
-El método de regresión es una técnica estadística que se utiliza para modelar la relación entre una variable dependiente y una o más variables independientes. A diferencia de la interpolación, la regresión no busca pasar exactamente por todos los puntos, sino obtener una función que represente la tendencia general de los datos, especialmente cuando estos están sujetos a errores de medición o ruido.
-
-Uno de los tipos más comunes es la regresión lineal, donde se ajusta una línea recta a los datos minimizando el error cuadrático entre los valores observados y los estimados. Existen también regresiones polinómicas, logarítmicas, exponenciales y otros modelos que se adaptan a distintas situaciones según la naturaleza del fenómeno observado.
-
-El método de regresión es ampliamente utilizado en diversas disciplinas como economía, física, ingeniería y ciencias sociales, ya que permite hacer predicciones, analizar relaciones entre variables y evaluar la fuerza y dirección de estas relaciones. Es un pilar fundamental del análisis estadístico y del modelado matemático basado en datos reales.
 
 ---
 
-### Ventajas y Desventajas
+## 🔍 Introducción
 
-**Ventajas:**
-- Modela tendencias generales en datos ruidosos o dispersos, útil para predicciones.
-- Proporciona métricas (como \( R^2 \)) para evaluar la calidad del ajuste.
-- Flexible, aplicable a modelos lineales y no lineales con las adaptaciones adecuadas.
+El **método de regresión** es una técnica estadística para modelar la relación entre una variable dependiente y una o más independientes. A diferencia de la interpolación, no busca pasar por todos los puntos, sino representar la **tendencia general**, especialmente con datos ruidosos o con errores.
 
-**Desventajas:**
-- Sensible a valores atípicos, que pueden distorsionar el modelo.
-- Asume una relación específica (lineal en este caso), lo que puede no ser adecuado para datos complejos.
-- Requiere supuestos estadísticos (como independencia de errores) que no siempre se cumplen.
+La regresión lineal es la más común, ajustando una línea recta que minimiza el error cuadrático entre valores observados y estimados. Existen también regresiones polinómicas, exponenciales, logarítmicas, etc., según la naturaleza del fenómeno.
+
+Se utiliza en economía, física, ingeniería y ciencias sociales para predecir, analizar y evaluar relaciones entre variables. Es fundamental para el análisis estadístico basado en datos reales.
 
 ---
 
-### Pseudocódigo
+## ✅ Ventajas y ❌ Desventajas
+
+| ✅ **Ventajas**                                                        | ❌ **Desventajas**                                                            |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Modela tendencias en datos ruidosos, ideal para predicciones          | Sensible a valores atípicos que pueden distorsionar el modelo                |
+| Proporciona métricas como $R^2$ para evaluar calidad de ajuste        | Asume relación específica (lineal en este caso), no siempre adecuada         |
+| Flexible: aplicable a modelos lineales y no lineales con adaptaciones | Requiere supuestos estadísticos (independencia de errores, normalidad, etc.) |
+
+---
+
+## ⚙️ Pseudocódigo
 
 ```text
 Inicio
-  Definir x como vector de reales [n]
-  Definir y como vector de reales [n]
-  Definir n como entero
-  Definir sumX, sumY, sumXY, sumX2 como reales
-  Definir m, b como reales
-  Definir i como entero
-
-  x = [0, 1, 2, 3]
-  y = [1, 2.718, 7.389, 20.085]
-  n = 4
-  sumX = 0
-  sumY = 0
-  sumXY = 0
-  sumX2 = 0
-
+  Definir x, y como vectores reales [n]
+  Inicializar sumX, sumY, sumXY, sumX2 a 0
   Para i = 0 hasta n-1
-    sumX = sumX + x[i]
-    sumY = sumY + y[i]
-    sumXY = sumXY + x[i] * y[i]
-    sumX2 = sumX2 + x[i] * x[i]
+    sumX  += x[i]
+    sumY  += y[i]
+    sumXY += x[i] * y[i]
+    sumX2 += x[i]^2
   Fin Para
 
-  m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX)
-  b = (sumY - m * sumX) / n
+  Calcular pendiente:
+    m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX^2)
+  Calcular ordenada al origen:
+    b = (sumY - m * sumX) / n
 
-  Imprimir "Ecuación de la recta: y = ", m, "x + ", b
+  Imprimir "Ecuación: y = m x + b"
 Fin
 ```
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseLinearRegression {
@@ -71,8 +58,8 @@ public class CodigoBaseLinearRegression {
         double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
 
         for (int i = 0; i < n; i++) {
-            sumX += x[i];
-            sumY += y[i];
+            sumX  += x[i];
+            sumY  += y[i];
             sumXY += x[i] * y[i];
             sumX2 += x[i] * x[i];
         }
@@ -87,7 +74,7 @@ public class CodigoBaseLinearRegression {
 
 ---
 
-### Ejemplo funcional en Java
+## 🚀 Ejemplo funcional con Métricas de Calidad
 
 ```java
 public class LinearRegression {
@@ -106,30 +93,27 @@ public class LinearRegression {
     }
 
     public static RegressionModel fitLinearRegression(double[] x, double[] y) {
-        if (x == null || y == null || x.length != y.length || x.length < 2) {
+        if (x == null || y == null || x.length != y.length || x.length < 2)
             throw new IllegalArgumentException("Los vectores x e y deben tener la misma longitud y al menos 2 elementos");
-        }
 
         int n = x.length;
         double sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
 
         for (int i = 0; i < n; i++) {
-            sumX += x[i];
-            sumY += y[i];
+            sumX  += x[i];
+            sumY  += y[i];
             sumXY += x[i] * y[i];
             sumX2 += x[i] * x[i];
             sumY2 += y[i] * y[i];
         }
 
         double denominator = n * sumX2 - sumX * sumX;
-        if (Math.abs(denominator) < 1e-10) {
+        if (Math.abs(denominator) < 1e-10)
             throw new IllegalArgumentException("No se puede ajustar la recta: datos insuficientes o colineales");
-        }
 
         double m = (n * sumXY - sumX * sumY) / denominator;
         double b = (sumY - m * sumX) / n;
 
-        // Calcular el coeficiente de determinación (R^2)
         double yMean = sumY / n;
         double ssTot = 0, ssRes = 0;
         for (int i = 0; i < n; i++) {
@@ -137,6 +121,7 @@ public class LinearRegression {
             ssRes += Math.pow(y[i] - yPred, 2);
             ssTot += Math.pow(y[i] - yMean, 2);
         }
+
         double rSquared = ssTot > 1e-10 ? 1 - ssRes / ssTot : 0;
         double mse = ssRes / n;
 
@@ -149,16 +134,16 @@ public class LinearRegression {
 
         try {
             RegressionModel model = fitLinearRegression(x, y);
-            System.out.printf("Regresión lineal simple:%n");
-            System.out.printf("Ecuación de la recta: y = %.3fx + %.3f%n", model.m, model.b);
-            System.out.printf("Coeficiente de determinación (R^2): %.3f%n", model.rSquared);
-            System.out.printf("Error cuadrático medio (MSE): %.3f%n", model.mse);
+            System.out.println("📊 Regresión lineal simple:");
+            System.out.printf("Ecuación: y = %.3fx + %.3f%n", model.m, model.b);
+            System.out.printf("R² (Coeficiente de determinación): %.3f%n", model.rSquared);
+            System.out.printf("MSE (Error cuadrático medio): %.3f%n", model.mse);
             System.out.println("Datos utilizados:");
             for (int i = 0; i < x.length; i++) {
-                System.out.printf("(%.1f, %.3f)%n", x[i], y[i]);
+                System.out.printf("  • (%.1f, %.3f)%n", x[i], y[i]);
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.err.println("❌ Error: " + e.getMessage());
         }
     }
 }
@@ -166,17 +151,17 @@ public class LinearRegression {
 
 ---
 
-### Caso de prueba:
+## 📋 Caso de prueba
 
 ```text
-Regresión lineal simple:
-Ecuación de la recta: y = 6.361x + 0.171
-Coeficiente de determinación (R^2): 0.818
-Error cuadrático medio (MSE): 7.687
+📊 Regresión lineal simple:
+Ecuación: y = 6.361x + 0.171
+R² (Coeficiente de determinación): 0.818
+MSE (Error cuadrático medio): 7.687
 Datos utilizados:
-(0.0, 1.000)
-(1.0, 2.718)
-(2.0, 7.389)
-(3.0, 20.085)
+  (0.0, 1.000)
+  (1.0, 2.718)
+  (2.0, 7.389)
+  (3.0, 20.085)
 ```
-### [<- T5 - Interpolación y Ajuste de Funciones ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
+[⬅ Volver a Introducción a la Interpolación y Ajuste de Funciones](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T5%20-%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones/Introducci%C3%B3n%20a%20la%20Interpolaci%C3%B3n%20y%20Ajuste%20de%20Funciones.md)
