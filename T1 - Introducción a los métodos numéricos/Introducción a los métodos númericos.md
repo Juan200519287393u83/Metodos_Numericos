@@ -1,21 +1,36 @@
-### [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
+### [← Volver al índice general](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
+
 # Tema 1: Introducción a los Métodos Numéricos
 
-## ¿De qué trata? 
+## 🧭 ¿Qué veremos en este tema?
 
-Bienvenidos al primer tema del repositorio de Métodos Numéricos, dedicado a los fundamentos esenciales para comprender cómo las aproximaciones numéricas resuelven problemas matemáticos. Este tema se centra en el estudio de los errores inherentes a los cálculos numéricos, un aspecto crítico para garantizar la precisión y fiabilidad de los resultados. Aquí exploraremos los diferentes tipos de errores que surgen al aplicar métodos numéricos, proporcionando una base sólida para los temas posteriores.
+Este primer tema marca el inicio del recorrido por el mundo de los **métodos numéricos**, centrándose en sus fundamentos clave. Aquí abordamos cómo las técnicas numéricas permiten aproximar soluciones a problemas matemáticos complejos y, sobre todo, los errores que surgen al aplicar dichos métodos. Conocer y comprender estos errores es vital para garantizar resultados precisos y confiables.
 
-## Introducción al tema
+## 🧩 Introducción al concepto
 
-Los métodos numéricos permiten obtener soluciones aproximadas a problemas matemáticos complejos, pero estas aproximaciones introducen errores que deben ser entendidos y controlados. En este tema, analizaremos el Error Numérico Total, que engloba las distintas fuentes de imprecisión en los cálculos. Estudiaremos conceptos clave como el Error de Redondeo, causado por la representación finita de números en computadoras; el Error por Cancelación Numérica, que ocurre al restar números muy cercanos; los Errores de Formulación, derivados de modelos matemáticos simplificados; los Errores por Equivocación, relacionados con fallos humanos o de implementación; los Errores por Truncamiento, originados al aproximar procesos infinitos; y la Incertidumbre en los Datos, que afecta la calidad de los resultados debido a datos imprecisos.
+Los métodos numéricos nos brindan una forma práctica de resolver problemas que no pueden resolverse de forma exacta. Sin embargo, en este proceso siempre se introducen errores que deben identificarse y minimizarse. Este tema se enfoca en el **Error Numérico Total**, el cual se compone de múltiples fuentes de imprecisión.
 
-Comprender estos conceptos es crucial para evaluar la calidad de las soluciones numéricas y diseñar algoritmos robustos. A través de explicaciones teóricas, ejemplos prácticos y código en Java, este tema te ayudará a identificar, analizar y minimizar los errores en tus cálculos. 
+Analizaremos los siguientes tipos de errores:
 
-Dentro del tema, tenemos los sigueintes subtemas, cada uno con una introducción, su pseudocódigo y un ejemplo en Java:
-- [Error Numérico Total](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20Num%C3%A9rico%20Total.md)
-- [Error de Redondeo](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20de%20Redondeo.md) 
-- [Error por Cancelación Numérica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Error%20por%20Cancelaci%C3%B3n%20Num%C3%A9rica.md)
-- [Errores de Formulación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20de%20Formulaci%C3%B3n.md)
-- [Errores por Equivocación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20por%20Equivocaci%C3%B3n.md)
-- [Errores por Truncamiento](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Errores%20por%20Truncamiento.md)
-- [Incertidumbre en los Datos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Incertidumbre%20en%20los%20Datos.md)
+- **Error de redondeo**: causado por la representación limitada de números en computadoras.
+- **Error por cancelación numérica**: cuando se restan valores casi iguales y se pierde precisión.
+- **Errores de formulación**: producto de simplificaciones en los modelos matemáticos.
+- **Errores por equivocación**: derivados de errores humanos o en la implementación.
+- **Errores por truncamiento**: que surgen al cortar procesos infinitos (como series o derivadas).
+- **Incertidumbre en los datos**: debida a la calidad o precisión de los datos de entrada.
+
+Este conocimiento es la base para evaluar la calidad de nuestras soluciones y para construir algoritmos numéricos más eficientes y estables. A lo largo del tema encontrarás explicaciones claras, ejemplos ilustrativos y código en **Java** para llevar a la práctica cada tipo de error.
+
+---
+
+## 🧾 Subtemas disponibles
+
+Cada subtema incluye una introducción teórica, su pseudocódigo y un ejemplo desarrollado en Java:
+
+- [🔹 Error Numérico Total](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Error%20Numérico%20Total.md)
+- [🔹 Error de Redondeo](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Error%20de%20Redondeo.md)
+- [🔹 Error por Cancelación Numérica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Error%20por%20Cancelación%20Numérica.md)
+- [🔹 Errores de Formulación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Errores%20de%20Formulación.md)
+- [🔹 Errores por Equivocación](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Errores%20por%20Equivocación.md)
+- [🔹 Errores por Truncamiento](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Errores%20por%20Truncamiento.md)
+- [🔹 Incertidumbre en los Datos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducción%20a%20los%20métodos%20numéricos/Incertidumbre%20en%20los%20Datos.md)
