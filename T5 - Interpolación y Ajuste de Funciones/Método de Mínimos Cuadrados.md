@@ -5,11 +5,11 @@
 
 ## 🔎 Introducción
 
-> El **método de mínimos cuadrados** es una técnica matemática esencial para determinar la función que mejor representa un conjunto de datos experimentales, minimizando la suma de los cuadrados de las diferencias entre los valores observados y los predichos por el modelo.
->
-> Comúnmente se emplea para ajustar una recta (modelo lineal) a datos dispersos, garantizando un equilibrio óptimo según criterios estadísticos rigurosos. Además, puede extenderse a modelos polinómicos y no lineales con herramientas computacionales modernas.
->
-> Más allá de la modelación, este método facilita la comprensión y cuantificación de las relaciones funcionales entre variables.
+ El **método de mínimos cuadrados** es una técnica matemática esencial para determinar la función que mejor representa un conjunto de datos experimentales, minimizando la suma de los cuadrados de las diferencias entre los valores observados y los predichos por el modelo.
+
+ Comúnmente se emplea para ajustar una recta (modelo lineal) a datos dispersos, garantizando un equilibrio óptimo según criterios estadísticos rigurosos. Además, puede extenderse a modelos polinómicos y no lineales con herramientas computacionales modernas.
+
+Más allá de la modelación, este método facilita la comprensión y cuantificación de las relaciones funcionales entre variables.
 
 ---
 
