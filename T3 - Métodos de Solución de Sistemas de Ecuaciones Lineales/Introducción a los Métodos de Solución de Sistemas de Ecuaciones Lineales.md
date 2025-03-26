@@ -1,15 +1,18 @@
-### [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
+### 🔙 [Volver al Índice Principal](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
-# Tema 3: Métodos de Solución de Sistemas de Ecuaciones Lineales
-## Introducción
-En el campo de los métodos numéricos, la solución de sistemas de ecuaciones lineales representa una de las áreas fundamentales y más aplicadas dentro de la ingeniería, las ciencias exactas y la computación. Estos sistemas permiten modelar una gran variedad de problemas reales como circuitos eléctricos, estructuras mecánicas, equilibrio químico, flujos de fluidos, análisis económico, entre otros. Debido a que muchos de estos sistemas contienen un número elevado de ecuaciones y variables, su resolución manual se vuelve impráctica, lo que hace indispensable el uso de técnicas numéricas eficientes y confiables.
+# 📐 Tema 3: Técnicas para Resolver Sistemas de Ecuaciones Lineales
 
-Existen diversos métodos para abordar la solución de sistemas lineales. Algunos de ellos son métodos directos, como la eliminación de Gauss, que tienen el objetivo de encontrar una solución precisa en un número finito de pasos, siempre que el sistema sea bien condicionado. Por otro lado, están los métodos iterativos como el método de Jacobi y el de Gauss-Seidel, que comienzan con una estimación inicial y refinan la solución progresivamente. Estos métodos suelen ser más eficientes para sistemas grandes y dispersos, como los que se encuentran comúnmente en simulaciones computacionales.
+## 📝 Resumen
 
-La elección del método más adecuado depende de varios factores como la dimensión del sistema, la naturaleza de los coeficientes, la precisión requerida y los recursos computacionales disponibles. Por ello, este tema no solo se enfoca en la implementación de los métodos, sino también en el análisis de su comportamiento, su estabilidad, su eficiencia y sus limitaciones. Estudiar estos métodos proporciona una base sólida para enfrentarse a desafíos numéricos más complejos y es clave para desarrollar soluciones computacionales robustas en múltiples disciplinas.
+Dentro del análisis numérico, la resolución de sistemas de ecuaciones lineales es una de las áreas más importantes y ampliamente utilizadas en ingeniería, ciencias exactas y computación. Estos sistemas modelan diversas situaciones reales, desde circuitos eléctricos y estructuras mecánicas hasta procesos químicos, flujos de fluidos y análisis económicos. Debido al gran tamaño que pueden alcanzar estos sistemas, resolverlos manualmente es poco viable, lo que hace indispensable contar con métodos numéricos eficientes y confiables.
 
-El tema cuenta con varios métodos como el de:
-- [Método de Eliminación Gaussiana](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/M%C3%A9todo%20de%20Eliminaci%C3%B3n%20Gaussiana.md)
-- [Método de Gauss-Jordan](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/M%C3%A9todo%20de%20Gauss-Jordan.md)
-- [Método de Gauss-Seidel](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/M%C3%A9todo%20de%20Gauss-Seidel.md)
-- [Método de Jacobi](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/M%C3%A9todo%20de%20Jacobi.md)
+Los métodos para solucionar sistemas lineales se dividen principalmente en dos categorías: los métodos directos y los iterativos. Los métodos directos, como la eliminación de Gauss, buscan obtener la solución exacta en un número finito de pasos, siempre que el sistema esté bien condicionado. Por otro lado, los métodos iterativos —como Jacobi y Gauss-Seidel— parten de una estimación inicial y mejoran la solución paso a paso, resultando especialmente útiles para sistemas grandes y dispersos, comunes en simulaciones computacionales.
+
+La selección del método ideal depende de factores como el tamaño del sistema, la estructura de la matriz de coeficientes, la precisión requerida y la capacidad de cálculo disponible. Por esta razón, este tema no solo abarca la implementación de los distintos algoritmos, sino que también profundiza en el análisis de su rendimiento, estabilidad y limitaciones. Dominar estos métodos es fundamental para enfrentar desafíos numéricos complejos y desarrollar soluciones robustas en múltiples áreas científicas y tecnológicas.
+
+## 📂 Métodos incluidos:
+
+* 🔹 [Eliminación Gaussiana](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20Métodos%20de%20Solución%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Método%20de%20Eliminación%20Gaussiana.md)
+* 🔹 [Gauss-Jordan](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20Métodos%20de%20Solución%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Método%20de%20Gauss-Jordan.md)
+* 🔹 [Gauss-Seidel](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20Métodos%20de%20Solución%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Método%20de%20Gauss-Seidel.md)
+* 🔹 [Jacobi](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20Métodos%20de%20Solución%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Método%20de%20Jacobi.md)
