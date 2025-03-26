@@ -1,30 +1,32 @@
-# Tema 6: Método de Pasos Múltiples
+<div align="center">
 
-## Introducción
+# 🎯 Tema 6: Método de Pasos Múltiples
 
-El método de pasos múltiples es una técnica numérica utilizada para resolver ecuaciones diferenciales ordinarias que, a diferencia de los métodos de un solo paso, utiliza información de varios puntos anteriores para calcular el valor siguiente de la solución. Esta estrategia permite mejorar la precisión sin requerir evaluaciones adicionales de la función derivada, lo que puede traducirse en un mejor rendimiento computacional.
-
-Entre los métodos de pasos múltiples más conocidos se encuentran los métodos de Adams-Bashforth y Adams-Moulton. Estos métodos requieren una fase inicial de arranque, que generalmente se lleva a cabo con un método de un solo paso como Runge-Kutta, para calcular los primeros valores necesarios. Una vez establecidos estos valores iniciales, el método puede avanzar utilizando las evaluaciones previas.
-
-La principal ventaja de los métodos de pasos múltiples es que ofrecen una mayor eficiencia en términos de precisión por evaluación de función. No obstante, también presentan desafíos, como la necesidad de gestionar condiciones iniciales múltiples y una mayor complejidad en su implementación. A pesar de esto, son ampliamente utilizados en aplicaciones donde se requiere integración a largo plazo con alta precisión.
+</div>
 
 ---
 
-### Ventajas y Desventajas
+## 📚 Introducción
 
-**Ventajas:**
-- Mayor eficiencia computacional al reutilizar evaluaciones previas de la función.
-- Alta precisión para ecuaciones diferenciales con comportamiento suave.
-- Ideal para integraciones numéricas a largo plazo.
+El método de pasos múltiples es una técnica numérica utilizada para resolver ecuaciones diferenciales ordinarias que, a diferencia de los métodos de un solo paso, aprovecha la información de varios puntos anteriores para calcular el valor siguiente de la solución. Esta estrategia permite mejorar la precisión sin realizar evaluaciones adicionales de la función derivada, lo que puede traducirse en un mejor rendimiento computacional.
 
-**Desventajas:**
-- Requiere un método de arranque (como Euler o Runge-Kutta) para los primeros puntos.
-- Más complejo de implementar que los métodos de un solo paso.
-- Sensible a errores acumulados si las condiciones iniciales o el paso no son adecuados.
+Entre los métodos de pasos múltiples más conocidos están los métodos de Adams-Bashforth (explícito) y Adams-Moulton (implícito). Estos métodos requieren una fase inicial de arranque, generalmente con un método de un solo paso como Runge-Kutta, para obtener los primeros valores necesarios. Una vez establecidos estos valores, el método puede avanzar reutilizando evaluaciones previas.
+
+La principal ventaja de estos métodos es la eficiencia en términos de precisión por evaluación de función, haciéndolos ideales para integraciones numéricas a largo plazo. Sin embargo, requieren manejar múltiples condiciones iniciales y son más complejos de implementar que métodos de un solo paso.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
+
+| Ventajas                                                          | Desventajas                                                                    |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Mayor eficiencia computacional al reutilizar evaluaciones previas | Requiere método de arranque para primeros valores                              |
+| Alta precisión para ecuaciones con comportamiento suave           | Implementación más compleja que métodos de un solo paso                        |
+| Ideal para integraciones numéricas de largo plazo                 | Sensible a errores acumulados si paso o condiciones iniciales no son adecuadas |
+
+---
+
+## 🧩 Pseudocódigo
 
 ```text
 Inicio
@@ -32,14 +34,7 @@ Inicio
     Retornar -2 * x * y
   Fin Función
 
-  Definir a como real
-  Definir b como real
-  Definir h como real
-  Definir n como entero
-  Definir x como vector de reales [n+1]
-  Definir y como vector de reales [n+1]
-  Definir i como entero
-
+  Definir a, b, h, n, x[], y[]
   a = 0.0
   b = 1.0
   h = 0.2
@@ -53,7 +48,7 @@ Inicio
   // Primer paso con Euler
   y[1] = y[0] + h * f(x[0], y[0])
 
-  // Adams-Bashforth de 2 pasos
+  // Método Adams-Bashforth de 2 pasos
   Para i = 1 hasta n-1
     y[i+1] = y[i] + (h / 2) * (3 * f(x[i], y[i]) - f(x[i-1], y[i-1]))
   Fin Para
@@ -66,7 +61,7 @@ Fin
 
 ---
 
-### Código base en Java
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseAdamsBashforth {
@@ -75,9 +70,7 @@ public class CodigoBaseAdamsBashforth {
     }
 
     public static void main(String[] args) {
-        double a = 0.0;
-        double b = 1.0;
-        double h = 0.2;
+        double a = 0.0, b = 1.0, h = 0.2;
         int n = 5;
         double[] x = new double[n + 1];
         double[] y = new double[n + 1];
@@ -87,8 +80,10 @@ public class CodigoBaseAdamsBashforth {
             x[i] = a + i * h;
         }
 
+        // Primer paso con Euler
         y[1] = y[0] + h * f(x[0], y[0]);
 
+        // Adams-Bashforth de 2 pasos
         for (int i = 1; i < n; i++) {
             y[i + 1] = y[i] + (h / 2) * (3 * f(x[i], y[i]) - f(x[i - 1], y[i - 1]));
         }
@@ -102,7 +97,7 @@ public class CodigoBaseAdamsBashforth {
 
 ---
 
-### Ejemplo funcional en Java
+## ⚙️ Ejemplo funcional en Java
 
 ```java
 public class AdamsBashforth {
@@ -130,17 +125,14 @@ public class AdamsBashforth {
         double[] y = new double[n + 1];
         SolutionPoint[] solution = new SolutionPoint[n + 1];
 
-        // Inicializar puntos x
         for (int i = 0; i <= n; i++) {
             x[i] = a + i * h;
             if (i == n && Math.abs(x[i] - b) > 1e-10) {
-                x[i] = b; // Ajustar el último punto al límite b
+                x[i] = b;
             }
         }
 
-        // Condición inicial
         y[0] = y0;
-
         // Primer paso con Euler
         y[1] = y[0] + h * f(x[0], y[0]);
 
@@ -149,7 +141,6 @@ public class AdamsBashforth {
             y[i + 1] = y[i] + (h / 2) * (3 * f(x[i], y[i]) - f(x[i - 1], y[i - 1]));
         }
 
-        // Almacenar resultados
         for (int i = 0; i <= n; i++) {
             solution[i] = new SolutionPoint(x[i], y[i]);
         }
@@ -162,10 +153,7 @@ public class AdamsBashforth {
     }
 
     public static void main(String[] args) {
-        double a = 0.0;
-        double b = 1.0;
-        double h = 0.2;
-        double y0 = 1.0;
+        double a = 0.0, b = 1.0, h = 0.2, y0 = 1.0;
 
         try {
             SolutionPoint[] solution = solveAdamsBashforth(a, b, h, y0);
@@ -186,7 +174,7 @@ public class AdamsBashforth {
 
 ---
 
-### Caso de prueba:
+## 📊 Caso de prueba
 
 ```text
 Método de Adams-Bashforth (2 pasos):
@@ -201,4 +189,11 @@ x = 0.6, y = 0.862
 x = 0.8, y = 0.711
 x = 1.0, y = 0.574
 ```
-### [<- T6 - Solución de Ecuaciones Diferenciales ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Introducci%C3%B3n%20a%20la%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales.md)
+
+---
+
+## 🔙 Navegación
+
+[⬅️ Regresar a T6 - Solución de Ecuaciones Diferenciales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Introducci%C3%B3n%20a%20la%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales.md)
+
+---
