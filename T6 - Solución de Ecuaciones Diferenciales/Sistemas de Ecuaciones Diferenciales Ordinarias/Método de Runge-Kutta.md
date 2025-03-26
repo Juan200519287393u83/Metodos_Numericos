@@ -1,8 +1,10 @@
 
-<div align="center">
 #🎯 Tema 6: Método de Runge-Kutta
-</div>
+<div align="center">
 
+# 🧮 Tema 6: Método de Euler
+
+</div>
 ---
 
 ## 🚀 Introducción
