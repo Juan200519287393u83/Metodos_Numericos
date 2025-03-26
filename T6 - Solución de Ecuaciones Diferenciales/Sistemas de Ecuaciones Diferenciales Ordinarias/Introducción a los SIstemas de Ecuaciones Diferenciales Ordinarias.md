@@ -1,14 +1,32 @@
-### [<- Regresar T6 - Solución de Ecuaciones Diferenciales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Introducci%C3%B3n%20a%20la%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales.md)
+<div align="center">
 
-# Sistemas de Ecuaciones Diferenciales Ordinarias
-## Introducción
-Un sistema de ecuaciones diferenciales ordinarias (EDO) aparece cuando se tienen varias funciones desconocidas, cada una dependiente de una misma variable independiente, y todas están relacionadas a través de derivadas. Este tipo de sistemas es común en la modelación de procesos físicos, biológicos, económicos, y en problemas de ingeniería como el movimiento de múltiples cuerpos o el análisis de circuitos eléctricos.
+# ⚙️ Sistemas de Ecuaciones Diferenciales Ordinarias (EDO)
 
-Para resolver estos sistemas, se adaptan los métodos numéricos usados en ecuaciones diferenciales simples a estructuras vectoriales. De esta manera, métodos como Euler, Runge-Kutta y Taylor se extienden para operar con vectores y matrices, permitiendo calcular múltiples soluciones simultáneamente a lo largo del dominio del problema.
+</div>
 
-La principal complejidad al trabajar con sistemas de EDO radica en la necesidad de manejar múltiples ecuaciones acopladas, lo cual puede afectar tanto la precisión como la estabilidad del método. Sin embargo, con una formulación adecuada y una implementación cuidadosa, los métodos numéricos permiten obtener soluciones precisas para estos sistemas, lo cual es esencial en simulaciones de sistemas dinámicos reales.
+---
 
-Algunos métodos que se pueden aplicar a Ecuacinoes Diferenciales Ordinarias son:
-- [Método de Euler](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/M%C3%A9todo%20de%20Euler.md)
-- [Método de Runge-Kutta](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/M%C3%A9todo%20de%20Runge-Kutta.md)
-- [Método de Taylor](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/M%C3%A9todo%20de%20Taylor.md)
+## 🔎 Introducción
+
+Un sistema de **ecuaciones diferenciales ordinarias (EDO)** involucra varias funciones desconocidas dependientes de una misma variable independiente, relacionadas entre sí mediante derivadas. Estos sistemas aparecen en modelación física, biológica, económica e ingeniería — por ejemplo, en el movimiento de múltiples cuerpos o análisis de circuitos eléctricos.
+
+Para resolverlos, los métodos numéricos para ecuaciones diferenciales simples (como Euler, Runge-Kutta y Taylor) se adaptan para manejar **vectores y matrices**, calculando múltiples soluciones simultáneamente a lo largo del dominio.
+
+La dificultad principal es gestionar las ecuaciones acopladas, lo que puede afectar precisión y estabilidad. Sin embargo, con formulación e implementación cuidadosas, es posible obtener soluciones precisas, vitales para simular sistemas dinámicos reales.
+
+---
+
+## 🚀 Métodos aplicables
+
+* 👉 [Método de Euler](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/M%C3%A9todo%20de%20Euler.md)
+* 👉 [Método de Runge-Kutta](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/M%C3%A9todo%20de%20Runge-Kutta.md)
+* 👉 [Método de Taylor](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Sistemas%20de%20Ecuaciones%20Diferenciales%20Ordinarias/M%C3%A9todo%20de%20Taylor.md)
+
+---
+
+<div align="center">
+
+[⬅ Regresar a T6 - Solución de Ecuaciones Diferenciales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T6%20-%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales/Introducci%C3%B3n%20a%20la%20Soluci%C3%B3n%20de%20Ecuaciones%20Diferenciales.md)
+
+</div>
+---
