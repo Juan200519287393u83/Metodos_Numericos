@@ -2,7 +2,7 @@
 
 ---
 
-### ❓ ¿Qué significa?
+### ❓ ¿Qué es?
 
 En numerosos problemas prácticos, los valores de entrada no se conocen con total exactitud. Esta imprecisión puede originarse por limitaciones en los instrumentos de medición, ruido en las pruebas experimentales, redondeos o estimaciones aproximadas. Por lo tanto, aun empleando un método numérico preciso, los resultados pueden verse afectados por errores inherentes a los datos iniciales.
 
