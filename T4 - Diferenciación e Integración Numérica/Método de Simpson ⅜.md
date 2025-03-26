@@ -1,45 +1,39 @@
-# Tema 4: Método de Simpson 3/8
+# 📌 Tema 4: Método de Simpson 3/8
 
-## Introducción
+## 🧠 Introducción
 
-El método de Simpson 3/8 es una variación del método de Simpson que se utiliza cuando se desea integrar funciones sobre un número de subintervalos que no es múltiplo de dos, pero sí es múltiplo de tres. A diferencia del método 1/3, esta técnica emplea una aproximación mediante polinomios de tercer grado (cúbicos), lo que permite un ajuste más fino de la curva de la función en ciertos contextos.
+El **método de Simpson 3/8** es una variante del método de Simpson diseñado para integraciones donde el número de subintervalos es múltiplo de tres. A diferencia del método 1/3, este método utiliza polinomios de tercer grado (cúbicos) para aproximar la función, lo que puede ofrecer una mejor adaptación a la curva en ciertos casos.
 
-Este método divide el intervalo de integración en tres partes iguales y utiliza una fórmula específica que asigna diferentes pesos a los valores de la función en los extremos y en los puntos intermedios. Aunque no es tan común como el método de Simpson 1/3, resulta muy útil en casos en los que el número de subintervalos no permite aplicar directamente aquel método, o cuando se desea una mejor aproximación en ciertos tramos.
+Este método divide el intervalo en tres partes iguales y aplica una fórmula que asigna pesos distintos a los valores de la función en los puntos extremos y en los puntos interiores.
 
-La precisión del método 3/8 es generalmente comparable a la del método 1/3, y puede ser superior en situaciones específicas. Sin embargo, como todos los métodos numéricos, su efectividad depende de la naturaleza de la función a integrar y del tamaño de los subintervalos. En conjunto con otros métodos, ofrece una excelente herramienta para integrar funciones que no pueden resolverse de forma analítica.
+Aunque su uso no es tan extendido como el método 1/3, resulta especialmente útil cuando el número de subintervalos no permite aplicar el método 1/3 o cuando se busca una mayor precisión en segmentos específicos.
 
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Utiliza polinomios cúbicos, lo que puede mejorar la precisión en ciertas funciones.
-- Aplicable cuando el número de subintervalos es múltiplo de tres.
-- Ofrece una alternativa útil cuando el método 1/3 no es viable.
-
-**Desventajas:**
-- Requiere un número de subintervalos múltiplo de tres, lo que limita su flexibilidad.
-- Puede ser menos eficiente que el método 1/3 en términos de implementación.
-- Pierde precisión si la función tiene discontinuidades o cambios bruscos.
+La exactitud del método 3/8 es comparable al método 1/3 y en ocasiones puede superar su precisión, dependiendo de la función y del tamaño de los subintervalos.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```text
+| 🟢 Ventajas                                                  | 🔴 Desventajas                                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| Emplea polinomios cúbicos, lo que puede mejorar la exactitud | Requiere que el número de subintervalos sea múltiplo de tres                   |
+| Es útil cuando el método 1/3 no se puede aplicar             | Puede ser más complejo de implementar que el método 1/3                        |
+| Proporciona una alternativa para casos particulares          | La precisión disminuye en funciones con discontinuidades o variaciones bruscas |
+
+---
+
+## ⚙️ Pseudocódigo
+
+```plaintext
 Inicio
   Función f(x)
     Retornar exp(x)
   Fin Función
 
-  Definir a como real
-  Definir b como real
+  Definir a, b como reales
   Definir n como entero
-  Definir h como real
-  Definir suma como real
-  Definir x como real
+  Definir h, suma, x, integral como reales
   Definir i como entero
-  Definir integral como real
 
   a = 0.0
   b = 1.0
@@ -53,7 +47,7 @@ Inicio
   h = (b - a) / n
   suma = f(a) + f(b)
 
-  Para i = 1 hasta n-1
+  Para i = 1 hasta n - 1
     x = a + i * h
     Si i mod 3 = 0
       suma = suma + 2 * f(x)
@@ -63,11 +57,13 @@ Inicio
   Fin Para
 
   integral = (3 * h / 8) * suma
-  Imprimir "Integral aproximada: ", integral
+  Imprimir "Valor aproximado de la integral: ", integral
 Fin
 ```
 
-### Código base en Java
+---
+
+## 💻 Código base en Java
 
 ```java
 public class CodigoBaseSimpsonThreeEighths {
@@ -98,12 +94,14 @@ public class CodigoBaseSimpsonThreeEighths {
         }
 
         double integral = (3 * h / 8) * suma;
-        System.out.println("Integral aproximada: " + integral);
+        System.out.println("Valor aproximado de la integral: " + integral);
     }
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo funcional en Java
 
 ```java
 public class SimpsonThreeEighths {
@@ -134,14 +132,16 @@ public class SimpsonThreeEighths {
         }
 
         double integral = (3 * h / 8) * suma;
-        System.out.printf("Integral aproximada: %.3f%n", integral);
+        System.out.printf("Valor aproximado de la integral: %.3f%n", integral);
     }
 }
 ```
 
-### Caso de prueba:
+---
 
-```text
-Integral aproximada: 1.718
+## 🧪 Resultado esperado
+
 ```
-### [<- T4 - Diferenciación e Integración Numérica ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/Introducci%C3%B3n%20a%20la%20DIferenciai%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica.md)
+Valor aproximado de la integral: 1.718
+```
+### 🔙 [← Volver al índice del Tema 4 - Diferenciación e Integración Numérica](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T4%20-%20Diferenciaci%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica/Introducci%C3%B3n%20a%20la%20DIferenciai%C3%B3n%20e%20Integraci%C3%B3n%20Num%C3%A9rica.md)
