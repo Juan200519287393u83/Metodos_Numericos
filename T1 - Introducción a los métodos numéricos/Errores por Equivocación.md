@@ -1,30 +1,30 @@
-## Tema 1: Errores por Equivocación
+### 🔙 [← Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
 
-# ¿Qué es?
-
-Los errores por equivocación, también conocidos como errores humanos, ocurren cuando se comete una falla durante la formulación, programación o ejecución de un método numérico. Estos pueden incluir errores al ingresar datos, escribir una fórmula incorrecta, seleccionar mal el método para resolver un problema o malinterpretar los resultados obtenidos.
-
-Aunque no son inherentes al método numérico en sí, su impacto puede ser significativo. La buena práctica en la implementación de algoritmos incluye la validación de resultados, revisión cruzada de código y verificación de entradas y salidas para minimizar estos errores.
+# ⚠️ Tema 1: Errores por Equivocación
 
 ---
 
-### Ventajas y Desventajas
+### ❓ ¿Qué es?
 
-**Ventajas:**
-- Identificar estos errores fomenta mejores prácticas de programación, como la validación y verificación de datos.
-- Puede prevenir problemas mayores mediante revisiones y pruebas rigurosas.
-- Ayuda a mejorar la calidad general del código y los resultados al implementar controles de calidad.
+Los **errores por equivocación** o **errores humanos** ocurren durante la formulación, programación o ejecución de un método numérico. Pueden ser errores al ingresar datos, escribir fórmulas incorrectas, seleccionar mal un método o interpretar erróneamente resultados.
 
-**Desventajas:**
-- Son impredecibles y dependen del factor humano, lo que los hace difíciles de evitar completamente.
-- Pueden requerir tiempo adicional para depuración y corrección.
-- Su impacto puede ser significativo, incluso en sistemas bien diseñados, si no se detectan a tiempo.
+Aunque no son inherentes a los métodos numéricos, su impacto puede ser crítico. Por ello, es fundamental validar resultados, revisar código y verificar entradas y salidas para minimizarlos.
 
 ---
 
-### Pseudocódigo
+### ✅ Ventajas y ❌ Desventajas
 
-```java
+| ✅ **Ventajas**                                             | ❌ **Desventajas**                                             |
+| ---------------------------------------------------------- | ------------------------------------------------------------- |
+| Promueven mejores prácticas como validación y verificación | Son impredecibles y dependen del factor humano                |
+| Previenen problemas mayores mediante revisiones rigurosas  | Requieren tiempo extra para depuración y corrección           |
+| Mejoran la calidad del código y resultados                 | Pueden impactar significativamente si no se detectan a tiempo |
+
+---
+
+### 📝 Pseudocódigo
+
+```text
 Inicio
   Definir areaCorrecta como real
   Definir areaConError como real
@@ -36,7 +36,9 @@ Inicio
 Fin
 ```
 
-### Código base en Java
+---
+
+### 💻 Código base en Java
 
 ```java
 public class CodigoBaseEquivocacion {
@@ -51,7 +53,9 @@ public class CodigoBaseEquivocacion {
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+### 🛠 Ejemplo funcional en Java
 
 ```java
 public class ErrorEquivocacion {
@@ -68,11 +72,12 @@ public class ErrorEquivocacion {
 }
 ```
 
-### Caso de prueba:
+---
 
-```java
+### 📋 Caso de prueba:
+
+```text
 Área incorrecta: 31.416
 Área correcta: 78.540
 Diferencia por equivocación: 47.124
 ```
-### [<- Regresar a T1 - Introducción a los Métodos Numéricos](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T1%20-%20Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20num%C3%A9ricos/Introducci%C3%B3n%20a%20los%20m%C3%A9todos%20n%C3%BAmericos.md)
