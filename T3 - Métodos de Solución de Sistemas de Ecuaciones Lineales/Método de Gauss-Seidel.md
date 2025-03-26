@@ -1,85 +1,51 @@
-# Tema 3: Método de Gauss-Seidel
+# 📌 Tema 3: Método de Gauss-Seidel
 
-## Introducción al Método de Gauss-Seidel
+## 🧠 ¿En qué consiste el Método de Gauss-Seidel?
 
-El método de Gauss-Seidel es una técnica iterativa para resolver sistemas de ecuaciones lineales. Parte de una estimación inicial para las incógnitas y mejora progresivamente dicha estimación utilizando las ecuaciones del sistema. A diferencia del método de Jacobi, el método de Gauss-Seidel actualiza las variables en cada paso tan pronto como una nueva aproximación esté disponible, lo que generalmente permite una convergencia más rápida.
+El **método de Gauss-Seidel** es una técnica numérica iterativa diseñada para resolver sistemas de ecuaciones lineales. Parte de una suposición inicial para las incógnitas y, a través de repetidas aproximaciones, ajusta esas estimaciones utilizando directamente las ecuaciones del sistema.
 
-Este método es especialmente eficaz en sistemas grandes y dispersos, como los que surgen en simulaciones físicas, modelado de estructuras, dinámica de fluidos, entre otros. Para que funcione correctamente, el sistema debe cumplir ciertas condiciones de convergencia, como que la matriz de coeficientes sea diagonalmente dominante o simétrica positiva definida.
+A diferencia del método de Jacobi, este método **aprovecha inmediatamente los nuevos valores calculados**, utilizándolos en los siguientes pasos de la misma iteración. Esto suele traducirse en una **convergencia más rápida**.
 
-El método de Gauss-Seidel es fácil de implementar y puede alcanzar resultados precisos con pocos recursos computacionales si se cumplen las condiciones adecuadas. Sin embargo, no garantiza siempre la convergencia, por lo que es fundamental realizar un análisis previo del sistema o aplicar técnicas de precondicionamiento para asegurar su efectividad.
+Es especialmente útil para sistemas grandes y dispersos, como los que aparecen en simulaciones de estructuras, dinámica de fluidos, análisis térmico, entre otros. Para asegurar que el método converja, la matriz de coeficientes debe ser **diagonalmente dominante** o **simétrica definida positiva**.
 
----
-
-### Ventajas y Desventajas
-
-**Ventajas:**
-- Converge más rápido que el método de Jacobi al usar valores actualizados inmediatamente.
-- Eficiente para sistemas grandes y dispersos, como los que aparecen en aplicaciones científicas.
-- Requiere menos memoria que los métodos directos, ya que es iterativo.
-
-**Desventajas:**
-- La convergencia no está garantizada si la matriz no cumple condiciones como ser diagonalmente dominante.
-- Puede ser sensible a la elección de la estimación inicial.
-- En sistemas mal condicionados, puede requerir técnicas de precondicionamiento para converger.
+> ✅ Cuando se cumplen las condiciones adecuadas, el método es sencillo de implementar, eficiente y consume poca memoria.
+> ⚠️ Pero cuidado: **no siempre garantiza convergencia**, por lo que es recomendable estudiar previamente la estructura del sistema o aplicar técnicas de precondicionamiento.
 
 ---
 
-### Pseudocódigo
+## ⚖️ Ventajas y Desventajas
 
-```java
+| 🟢 Ventajas                                                                     | 🔴 Desventajas                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Utiliza los valores más recientes de inmediato, lo que acelera la convergencia. | No siempre converge si la matriz no cumple ciertas condiciones.    |
+| Ideal para sistemas de gran tamaño, especialmente con matrices dispersas.       | La calidad del resultado depende mucho de la estimación inicial.   |
+| Menor consumo de memoria comparado con métodos directos.                        | Puede necesitar precondicionamiento en sistemas mal condicionados. |
+
+---
+
+## ⚙️ Pseudocódigo del Método
+
+```plaintext
 Inicio
-  Definir n como entero
-  Definir A como matriz de reales [n][n]
-  Definir b como vector de reales [n]
-  Definir x como vector de reales [n]
-  Definir xNuevo como vector de reales [n]
-  Definir tolerancia como real
-  Definir maxIteraciones como entero
-  Definir iteracion como entero
-  Definir i, j como enteros
-  Definir error como real
+  Definir n, A[n][n], b[n], x[n], xNuevo[n]
+  Inicializar x con ceros
+  Definir tolerancia y máximo número de iteraciones
 
-  n = 3
-  A = [[3, 2, -1], [2, -2, 4], [-1, 0.5, -1]]
-  b = [1, -2, 0]
-  x = [0, 0, 0]
-  tolerancia = 0.001
-  maxIteraciones = 100
-  iteracion = 0
+  Mientras no se alcance la tolerancia o el máximo de iteraciones:
+    Para cada variable i:
+      Calcular la suma de A[i][j] * x[j] para j ≠ i
+      Actualizar xNuevo[i] = (b[i] - suma) / A[i][i]
+      Calcular el error con respecto al valor anterior
+      Asignar x[i] = xNuevo[i]
 
-  Mientras iteracion < maxIteraciones
-    error = 0
-    Para i = 0 hasta n-1
-      Definir suma como real
-      suma = 0
-      Para j = 0 hasta n-1
-        Si j != i
-          suma = suma + A[i][j] * x[j]
-        Fin Si
-      Fin Para
-      xNuevo[i] = (b[i] - suma) / A[i][i]
-      error = max(error, abs(xNuevo[i] - x[i]))
-      x[i] = xNuevo[i]
-    Fin Para
-
-    Imprimir "Iteración ", iteracion, ":"
-    Para i = 0 hasta n-1
-      Imprimir "x", i, " = ", x[i]
-    Fin Para
-
-    Si error < tolerancia
-      Imprimir "Solución encontrada"
-      Retornar
-    Fin Si
-
-    iteracion = iteracion + 1
-  Fin Mientras
-
-  Imprimir "Máximo de iteraciones alcanzado"
+    Mostrar valores de x[i] en la iteración actual
+    Si el error < tolerancia, detener
 Fin
 ```
 
-### Código base en Java
+---
+
+## 💻 Código Java (estructura base)
 
 ```java
 public class CodigoBaseGaussSeidel {
@@ -124,7 +90,9 @@ public class CodigoBaseGaussSeidel {
 }
 ```
 
-### Ejemplo funcional en Java
+---
+
+## ✅ Ejemplo resuelto
 
 ```java
 public class GaussSeidel {
@@ -166,9 +134,11 @@ public class GaussSeidel {
 }
 ```
 
-### Caso de prueba:
+---
 
-```java
+## 🧪 Resultado esperado (ejecución típica)
+
+```
 Iteración 0:
 x0 = 0.333
 x1 = -0.667
@@ -196,4 +166,4 @@ x2 = -0.429
 
 Solución encontrada
 ```
-### [<- Regresar a T3 - Métodos de Solución de Sistemas de Ecuaciones Lineales ](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
+### 🔙 [← Regresar al índice del Tema 3 - Métodos de Solución de Sistemas de Ecuaciones Lineales](https://github.com/Juan200519287393u83/Metodos_Numericos/blob/main/T3%20-%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales/Introducci%C3%B3n%20a%20los%20M%C3%A9todos%20de%20Soluci%C3%B3n%20de%20Sistemas%20de%20Ecuaciones%20Lineales.md)
