@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 Tema 6: Método de un paso
+# 🎯  Tema 6: Método de un paso
 
 </div>
 
