@@ -1,6 +1,6 @@
 ### 🔙 [<- Regresar al Temario](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
-# Tema 6: Introducción a la Solución de Ecuaciones Diferenciales
+#  Tema 6: Introducción a la Solución de Ecuaciones Diferenciales
 
 ## 📋 Introducción
 
