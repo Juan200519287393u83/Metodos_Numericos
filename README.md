@@ -1,4 +1,4 @@
-# 📐 Métodos Numéricos
+# 📐  Métodos Numéricos
 
 ¡Bienvenido a este repositorio educativo de **Métodos Numéricos**!  
 Aquí encontrarás una colección completa de teoría, ejemplos prácticos en **Java** y ejercicios resueltos que te ayudarán a dominar las técnicas numéricas fundamentales utilizadas en ingeniería, matemáticas aplicadas y ciencias computacionales.
