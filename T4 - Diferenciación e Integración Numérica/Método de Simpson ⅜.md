@@ -1,4 +1,4 @@
-# 📌 Tema 4: Método de Simpson 3/8
+#  📌 Tema 4: Método de Simpson 3/8
 
 ## 🧠 Introducción
 
