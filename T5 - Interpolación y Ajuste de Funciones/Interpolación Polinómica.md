@@ -1,4 +1,4 @@
-# 📌 Tema 5: Interpolación Polinómica
+# 📌  Tema 5: Interpolación Polinómica
 
 ## 🧠 Introducción
 
