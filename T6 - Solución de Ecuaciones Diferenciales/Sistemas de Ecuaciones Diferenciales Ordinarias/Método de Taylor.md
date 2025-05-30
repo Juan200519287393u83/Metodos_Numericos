@@ -1,6 +1,6 @@
  <div align="center">
 
-# 🎯 Tema 6: Método de Taylor
+# 🎯  Tema 6: Método de Taylor
 
 </div>
 
