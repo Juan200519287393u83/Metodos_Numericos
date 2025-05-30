@@ -1,4 +1,4 @@
-# 📌 Tema 5: Interpolación Lineal
+# 📌  Tema 5: Interpolación Lineal
 
 ## 🧠 Introducción
 
