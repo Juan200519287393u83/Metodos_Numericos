@@ -1,6 +1,6 @@
 ### 🔙 [Volver al Índice General](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
-# 📈 Tema 5: Interpolación y Ajuste de Funciones
+# 📈  Tema 5: Interpolación y Ajuste de Funciones
 
 ## 📝 Descripción General
 
