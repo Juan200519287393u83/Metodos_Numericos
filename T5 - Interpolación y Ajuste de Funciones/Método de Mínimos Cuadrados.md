@@ -1,5 +1,5 @@
 
-# 📊 Tema 5: Método de Mínimos Cuadrados
+# 📊  Tema 5: Método de Mínimos Cuadrados
 
 ---
 
