@@ -1,6 +1,6 @@
 ### 🔙 [Volver al Índice General](https://github.com/Juan200519287393u83/Metodos_Numericos/tree/main)
 
-# 📊 Tema 4: Introducción a la Diferenciación e Integración Numérica
+# 📊  Tema 4: Introducción a la Diferenciación e Integración Numérica
 
 ## 📝 Resumen
 
