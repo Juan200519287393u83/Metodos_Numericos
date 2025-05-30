@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚙️ Sistemas de Ecuaciones Diferenciales Ordinarias (EDO)
+# ⚙️  Sistemas de Ecuaciones Diferenciales Ordinarias (EDO)
 
 </div>
 
