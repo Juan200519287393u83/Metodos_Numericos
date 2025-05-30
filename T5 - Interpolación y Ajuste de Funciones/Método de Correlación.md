@@ -1,4 +1,4 @@
-# 📌 Tema 5: Método de Correlación
+# 📌  Tema 5: Método de Correlación
 
 ## 🧠 Introducción
 
