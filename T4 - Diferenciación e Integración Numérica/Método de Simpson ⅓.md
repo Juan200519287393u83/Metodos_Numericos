@@ -1,4 +1,4 @@
-# 📌 Tema 4: Método de Simpson 1/3
+#  📌 Tema 4: Método de Simpson 1/3
 
 ## 🧠 ¿En qué consiste el Método de Simpson 1/3?
 
