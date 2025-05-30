@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 Tema 6: Método de Pasos Múltiples
+#  🎯 Tema 6: Método de Pasos Múltiples
 
 </div>
 
